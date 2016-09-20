@@ -11,8 +11,10 @@
 		EB38664C1D906D1100DE4D9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38664B1D906D1100DE4D9E /* ViewController.swift */; };
 		EB38664F1D906D1100DE4D9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB38664D1D906D1100DE4D9E /* Main.storyboard */; };
 		EB3866521D906D1100DE4D9E /* AlarmClock.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB3866501D906D1100DE4D9E /* AlarmClock.xcdatamodeld */; };
-		EB3866541D906D1100DE4D9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB3866531D906D1100DE4D9E /* Assets.xcassets */; };
 		EB3866571D906D1100DE4D9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB3866551D906D1100DE4D9E /* LaunchScreen.storyboard */; };
+		EB3866611D90A1C300DE4D9E /* AudioClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3866601D90A1C300DE4D9E /* AudioClip.swift */; };
+		EB3866641D90A2FC00DE4D9E /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB3866631D90A2FC00DE4D9E /* Media.xcassets */; };
+		EB3866661D90A4D800DE4D9E /* SSSAudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3866651D90A4D800DE4D9E /* SSSAudioController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,9 +23,11 @@
 		EB38664B1D906D1100DE4D9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EB38664E1D906D1100DE4D9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EB3866511D906D1100DE4D9E /* AlarmClock.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AlarmClock.xcdatamodel; sourceTree = "<group>"; };
-		EB3866531D906D1100DE4D9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB3866561D906D1100DE4D9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB3866581D906D1100DE4D9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB3866601D90A1C300DE4D9E /* AudioClip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioClip.swift; sourceTree = "<group>"; };
+		EB3866631D90A2FC00DE4D9E /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		EB3866651D90A4D800DE4D9E /* SSSAudioController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSSAudioController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +62,13 @@
 			children = (
 				EB3866491D906D1100DE4D9E /* AppDelegate.swift */,
 				EB38664B1D906D1100DE4D9E /* ViewController.swift */,
+				EB3866651D90A4D800DE4D9E /* SSSAudioController.swift */,
+				EB3866601D90A1C300DE4D9E /* AudioClip.swift */,
 				EB38664D1D906D1100DE4D9E /* Main.storyboard */,
-				EB3866531D906D1100DE4D9E /* Assets.xcassets */,
 				EB3866551D906D1100DE4D9E /* LaunchScreen.storyboard */,
 				EB3866581D906D1100DE4D9E /* Info.plist */,
 				EB3866501D906D1100DE4D9E /* AlarmClock.xcdatamodeld */,
+				EB3866631D90A2FC00DE4D9E /* Media.xcassets */,
 			);
 			path = AlarmClock;
 			sourceTree = "<group>";
@@ -128,7 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB3866571D906D1100DE4D9E /* LaunchScreen.storyboard in Resources */,
-				EB3866541D906D1100DE4D9E /* Assets.xcassets in Resources */,
+				EB3866641D90A2FC00DE4D9E /* Media.xcassets in Resources */,
 				EB38664F1D906D1100DE4D9E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,8 +146,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB3866611D90A1C300DE4D9E /* AudioClip.swift in Sources */,
 				EB38664C1D906D1100DE4D9E /* ViewController.swift in Sources */,
 				EB3866521D906D1100DE4D9E /* AlarmClock.xcdatamodeld in Sources */,
+				EB3866661D90A4D800DE4D9E /* SSSAudioController.swift in Sources */,
 				EB38664A1D906D1100DE4D9E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
