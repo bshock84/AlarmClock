@@ -11,13 +11,14 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
-    let audioSession = AVAudioSession()
+    let alarmAudioController = SSSAudioController()
+    let audioClip = AudioClip.FogHorn
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
+        alarmAudioController.playAlarmSound(audioClip: audioClip)
         
         
        

@@ -13,12 +13,13 @@ import AVFoundation
 
 class SSSAudioController {
     
+    var audioPlayer = AVAudioPlayer()
     let audioSession = AVAudioSession.sharedInstance()
-    let audioClip: AudioClip
-    
-    init(audioClip: AudioClip) {
-        self.audioClip = audioClip
-    }
+//    let audioClip: AudioClip
+//    
+//    init(audioClip: AudioClip) {
+//        self.audioClip = audioClip
+//    }
     
     func configureAudioSession() {
         let availableCategories = audioSession.availableCategories
@@ -57,4 +58,46 @@ class SSSAudioController {
         
     }
     
+    func playAlarmSound(audioClip: AudioClip) {
+        let audioFilePath = Bundle.main.path(forResource: audioClip.rawValue, ofType: "mp3")
+        let audioFileURL = URL(fileURLWithPath: audioFilePath!)
+        activateAudioSession()
+        do {
+            try audioPlayer = AVAudioPlayer(contentsOf: audioFileURL)
+        } catch {
+            let audioPlayerError = NSError(domain: "Could not set the URL for the audio player.", code: 200, userInfo: nil)
+            NSLog(audioPlayerError.domain)
+            print(audioPlayerError)
+            return
+        }
+        audioPlayer.play()
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -13,8 +13,18 @@
 		EB3866521D906D1100DE4D9E /* AlarmClock.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB3866501D906D1100DE4D9E /* AlarmClock.xcdatamodeld */; };
 		EB3866571D906D1100DE4D9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB3866551D906D1100DE4D9E /* LaunchScreen.storyboard */; };
 		EB3866611D90A1C300DE4D9E /* AudioClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3866601D90A1C300DE4D9E /* AudioClip.swift */; };
-		EB3866641D90A2FC00DE4D9E /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB3866631D90A2FC00DE4D9E /* Media.xcassets */; };
+		EB3866641D90A2FC00DE4D9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB3866631D90A2FC00DE4D9E /* Assets.xcassets */; };
 		EB3866661D90A4D800DE4D9E /* SSSAudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3866651D90A4D800DE4D9E /* SSSAudioController.swift */; };
+		EB3866681D92352F00DE4D9E /* foghorn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EB3866671D92352F00DE4D9E /* foghorn.mp3 */; };
+		EB3866731D92656200DE4D9E /* railroadcrossing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EB38666A1D92656200DE4D9E /* railroadcrossing.mp3 */; };
+		EB3866741D92656200DE4D9E /* buzzbuzz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EB38666B1D92656200DE4D9E /* buzzbuzz.mp3 */; };
+		EB3866751D92656200DE4D9E /* wartime.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EB38666C1D92656200DE4D9E /* wartime.mp3 */; };
+		EB3866761D92656200DE4D9E /* bombsaway.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EB38666D1D92656200DE4D9E /* bombsaway.mp3 */; };
+		EB3866771D92656200DE4D9E /* firealarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EB38666E1D92656200DE4D9E /* firealarm.mp3 */; };
+		EB3866781D92656200DE4D9E /* tornadoally.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EB38666F1D92656200DE4D9E /* tornadoally.mp3 */; };
+		EB3866791D92656200DE4D9E /* missilecommand.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EB3866701D92656200DE4D9E /* missilecommand.mp3 */; };
+		EB38667A1D92656200DE4D9E /* oldtimebuzzer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EB3866711D92656200DE4D9E /* oldtimebuzzer.mp3 */; };
+		EB38667B1D92656200DE4D9E /* aliens.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EB3866721D92656200DE4D9E /* aliens.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +36,18 @@
 		EB3866561D906D1100DE4D9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB3866581D906D1100DE4D9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB3866601D90A1C300DE4D9E /* AudioClip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioClip.swift; sourceTree = "<group>"; };
-		EB3866631D90A2FC00DE4D9E /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		EB3866631D90A2FC00DE4D9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB3866651D90A4D800DE4D9E /* SSSAudioController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSSAudioController.swift; sourceTree = "<group>"; };
+		EB3866671D92352F00DE4D9E /* foghorn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = foghorn.mp3; sourceTree = "<group>"; };
+		EB38666A1D92656200DE4D9E /* railroadcrossing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = railroadcrossing.mp3; sourceTree = "<group>"; };
+		EB38666B1D92656200DE4D9E /* buzzbuzz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buzzbuzz.mp3; sourceTree = "<group>"; };
+		EB38666C1D92656200DE4D9E /* wartime.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wartime.mp3; sourceTree = "<group>"; };
+		EB38666D1D92656200DE4D9E /* bombsaway.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bombsaway.mp3; sourceTree = "<group>"; };
+		EB38666E1D92656200DE4D9E /* firealarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = firealarm.mp3; sourceTree = "<group>"; };
+		EB38666F1D92656200DE4D9E /* tornadoally.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tornadoally.mp3; sourceTree = "<group>"; };
+		EB3866701D92656200DE4D9E /* missilecommand.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = missilecommand.mp3; sourceTree = "<group>"; };
+		EB3866711D92656200DE4D9E /* oldtimebuzzer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = oldtimebuzzer.mp3; sourceTree = "<group>"; };
+		EB3866721D92656200DE4D9E /* aliens.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = aliens.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +80,7 @@
 		EB3866481D906D1100DE4D9E /* AlarmClock */ = {
 			isa = PBXGroup;
 			children = (
+				EB3866691D92646E00DE4D9E /* AlarmSounds */,
 				EB3866491D906D1100DE4D9E /* AppDelegate.swift */,
 				EB38664B1D906D1100DE4D9E /* ViewController.swift */,
 				EB3866651D90A4D800DE4D9E /* SSSAudioController.swift */,
@@ -68,9 +89,26 @@
 				EB3866551D906D1100DE4D9E /* LaunchScreen.storyboard */,
 				EB3866581D906D1100DE4D9E /* Info.plist */,
 				EB3866501D906D1100DE4D9E /* AlarmClock.xcdatamodeld */,
-				EB3866631D90A2FC00DE4D9E /* Media.xcassets */,
+				EB3866631D90A2FC00DE4D9E /* Assets.xcassets */,
 			);
 			path = AlarmClock;
+			sourceTree = "<group>";
+		};
+		EB3866691D92646E00DE4D9E /* AlarmSounds */ = {
+			isa = PBXGroup;
+			children = (
+				EB38666A1D92656200DE4D9E /* railroadcrossing.mp3 */,
+				EB38666B1D92656200DE4D9E /* buzzbuzz.mp3 */,
+				EB38666C1D92656200DE4D9E /* wartime.mp3 */,
+				EB38666D1D92656200DE4D9E /* bombsaway.mp3 */,
+				EB38666E1D92656200DE4D9E /* firealarm.mp3 */,
+				EB38666F1D92656200DE4D9E /* tornadoally.mp3 */,
+				EB3866701D92656200DE4D9E /* missilecommand.mp3 */,
+				EB3866711D92656200DE4D9E /* oldtimebuzzer.mp3 */,
+				EB3866721D92656200DE4D9E /* aliens.mp3 */,
+				EB3866671D92352F00DE4D9E /* foghorn.mp3 */,
+			);
+			name = AlarmSounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,9 +171,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB3866761D92656200DE4D9E /* bombsaway.mp3 in Resources */,
+				EB3866741D92656200DE4D9E /* buzzbuzz.mp3 in Resources */,
+				EB3866791D92656200DE4D9E /* missilecommand.mp3 in Resources */,
+				EB38667A1D92656200DE4D9E /* oldtimebuzzer.mp3 in Resources */,
+				EB3866781D92656200DE4D9E /* tornadoally.mp3 in Resources */,
+				EB3866731D92656200DE4D9E /* railroadcrossing.mp3 in Resources */,
+				EB3866681D92352F00DE4D9E /* foghorn.mp3 in Resources */,
+				EB3866751D92656200DE4D9E /* wartime.mp3 in Resources */,
 				EB3866571D906D1100DE4D9E /* LaunchScreen.storyboard in Resources */,
-				EB3866641D90A2FC00DE4D9E /* Media.xcassets in Resources */,
+				EB38667B1D92656200DE4D9E /* aliens.mp3 in Resources */,
+				EB3866641D90A2FC00DE4D9E /* Assets.xcassets in Resources */,
 				EB38664F1D906D1100DE4D9E /* Main.storyboard in Resources */,
+				EB3866771D92656200DE4D9E /* firealarm.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
