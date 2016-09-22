@@ -25,6 +25,7 @@
 		EB3866791D92656200DE4D9E /* missilecommand.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EB3866701D92656200DE4D9E /* missilecommand.mp3 */; };
 		EB38667A1D92656200DE4D9E /* oldtimebuzzer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EB3866711D92656200DE4D9E /* oldtimebuzzer.mp3 */; };
 		EB38667B1D92656200DE4D9E /* aliens.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EB3866721D92656200DE4D9E /* aliens.mp3 */; };
+		EB3BED4A1D93555400AB8480 /* SSSClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3BED491D93555400AB8480 /* SSSClock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		EB3866701D92656200DE4D9E /* missilecommand.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = missilecommand.mp3; sourceTree = "<group>"; };
 		EB3866711D92656200DE4D9E /* oldtimebuzzer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = oldtimebuzzer.mp3; sourceTree = "<group>"; };
 		EB3866721D92656200DE4D9E /* aliens.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = aliens.mp3; sourceTree = "<group>"; };
+		EB3BED491D93555400AB8480 /* SSSClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSSClock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,9 +84,10 @@
 			children = (
 				EB3866691D92646E00DE4D9E /* AlarmSounds */,
 				EB3866491D906D1100DE4D9E /* AppDelegate.swift */,
-				EB38664B1D906D1100DE4D9E /* ViewController.swift */,
 				EB3866651D90A4D800DE4D9E /* SSSAudioController.swift */,
 				EB3866601D90A1C300DE4D9E /* AudioClip.swift */,
+				EB3BED491D93555400AB8480 /* SSSClock.swift */,
+				EB38664B1D906D1100DE4D9E /* ViewController.swift */,
 				EB38664D1D906D1100DE4D9E /* Main.storyboard */,
 				EB3866551D906D1100DE4D9E /* LaunchScreen.storyboard */,
 				EB3866581D906D1100DE4D9E /* Info.plist */,
@@ -194,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB3BED4A1D93555400AB8480 /* SSSClock.swift in Sources */,
 				EB3866611D90A1C300DE4D9E /* AudioClip.swift in Sources */,
 				EB38664C1D906D1100DE4D9E /* ViewController.swift in Sources */,
 				EB3866521D906D1100DE4D9E /* AlarmClock.xcdatamodeld in Sources */,
@@ -360,6 +364,7 @@
 				EB38665D1D906D1100DE4D9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
