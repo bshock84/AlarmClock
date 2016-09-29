@@ -2,6 +2,22 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Digital-7Italic</string>
+		<string>Stinkin Boop Font.ttf</string>
+		<string>digital-7 (italic).ttf</string>
+		<string>Digital-7MonoItalic</string>
+		<string>digital-7 (mono italic).ttf</string>
+		<string>Boop</string>
+		<string>digital-7 (mono).ttf</string>
+		<string>Digital-7Mono</string>
+		<string>digital-7.ttf</string>
+		<string>Stinkin-BoopFont</string>
+		<string>Digital-7</string>
+		<string>RACE1BranntChiseledNCV</string>
+		<string>RACE1 Brannt Chiseled NCV.ttf</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

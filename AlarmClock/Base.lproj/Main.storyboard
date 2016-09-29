@@ -16,33 +16,58 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="50" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uzn-mn-FZ3">
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="100"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clockRadioPortrait" translatesAutoresizingMaskIntoConstraints="NO" id="KPm-EC-yUI"/>
+                            <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="50" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uzn-mn-FZ3">
+                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="12:34:56 PM">
+                                        <attributes>
+                                            <color key="NSColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="100" name="Digital-7MonoItalic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                                <size key="shadowOffset" width="7" height="-1"/>
+                                <size key="shadowOffset" width="-4" height="-1"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="0.69318426724137927" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Uzn-mn-FZ3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LgZ-Zj-1TP"/>
-                            <constraint firstItem="Uzn-mn-FZ3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Pg5-Ix-hp9"/>
-                            <constraint firstItem="Uzn-mn-FZ3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iQi-sU-iNt"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Uzn-mn-FZ3" secondAttribute="trailing" id="oJ7-60-ULt"/>
+                            <constraint firstAttribute="trailing" secondItem="KPm-EC-yUI" secondAttribute="trailing" constant="-5" id="3X2-Dl-SCD"/>
+                            <constraint firstItem="KPm-EC-yUI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-25" id="8mn-cc-7Dq"/>
+                            <constraint firstItem="Uzn-mn-FZ3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-36" id="LgZ-Zj-1TP">
+                                <variation key="heightClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="Uzn-mn-FZ3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="1" id="Pg5-Ix-hp9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KPm-EC-yUI" secondAttribute="bottom" constant="-5" id="Xvb-ci-HJ2"/>
+                            <constraint firstItem="Uzn-mn-FZ3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="1" id="iQi-sU-iNt">
+                                <variation key="widthClass=compact" constant="-9"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="Uzn-mn-FZ3" secondAttribute="trailing" constant="-1" id="oJ7-60-ULt">
+                                <variation key="widthClass=compact" constant="19"/>
+                            </constraint>
+                            <constraint firstItem="KPm-EC-yUI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-5" identifier="topOfImageConstraint" id="rbr-hM-gnu">
+                                <variation key="heightClass=compact" constant="100"/>
+                            </constraint>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundImageView" destination="KPm-EC-yUI" id="l0D-ny-UXi"/>
                         <outlet property="clockLabel" destination="Uzn-mn-FZ3" id="02p-GT-XpF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
+            <point key="canvasLocation" x="260.625" y="41.197183098591552"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="clockRadioPortrait" width="782" height="1336"/>
+    </resources>
 </document>

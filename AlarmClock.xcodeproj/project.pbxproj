@@ -26,6 +26,12 @@
 		EB38667A1D92656200DE4D9E /* oldtimebuzzer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EB3866711D92656200DE4D9E /* oldtimebuzzer.mp3 */; };
 		EB38667B1D92656200DE4D9E /* aliens.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EB3866721D92656200DE4D9E /* aliens.mp3 */; };
 		EB3BED4A1D93555400AB8480 /* SSSClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3BED491D93555400AB8480 /* SSSClock.swift */; };
+		EB402DFD1D9B7E1800B7C8AE /* digital-7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB402DFB1D9B701C00B7C8AE /* digital-7.ttf */; };
+		EB402DFE1D9B7E1C00B7C8AE /* digital-7 (mono).ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB402DFA1D9B701C00B7C8AE /* digital-7 (mono).ttf */; };
+		EB402DFF1D9B7E1F00B7C8AE /* digital-7 (mono italic).ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB402DF91D9B701C00B7C8AE /* digital-7 (mono italic).ttf */; };
+		EB402E001D9B7E2200B7C8AE /* digital-7 (italic).ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB402DF81D9B701C00B7C8AE /* digital-7 (italic).ttf */; };
+		EB40C8BA1D9604BD00AE6DDF /* Stinkin Boop Font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB40C8B91D9602FF00AE6DDF /* Stinkin Boop Font.ttf */; };
+		EB40C8BC1D96062400AE6DDF /* RACE1 Brannt Chiseled NCV.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB40C8BB1D9605EA00AE6DDF /* RACE1 Brannt Chiseled NCV.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +56,12 @@
 		EB3866711D92656200DE4D9E /* oldtimebuzzer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = oldtimebuzzer.mp3; sourceTree = "<group>"; };
 		EB3866721D92656200DE4D9E /* aliens.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = aliens.mp3; sourceTree = "<group>"; };
 		EB3BED491D93555400AB8480 /* SSSClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSSClock.swift; sourceTree = "<group>"; };
+		EB402DF81D9B701C00B7C8AE /* digital-7 (italic).ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital-7 (italic).ttf"; sourceTree = "<group>"; };
+		EB402DF91D9B701C00B7C8AE /* digital-7 (mono italic).ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital-7 (mono italic).ttf"; sourceTree = "<group>"; };
+		EB402DFA1D9B701C00B7C8AE /* digital-7 (mono).ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital-7 (mono).ttf"; sourceTree = "<group>"; };
+		EB402DFB1D9B701C00B7C8AE /* digital-7.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital-7.ttf"; sourceTree = "<group>"; };
+		EB40C8B91D9602FF00AE6DDF /* Stinkin Boop Font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stinkin Boop Font.ttf"; sourceTree = "<group>"; };
+		EB40C8BB1D9605EA00AE6DDF /* RACE1 Brannt Chiseled NCV.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RACE1 Brannt Chiseled NCV.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +104,12 @@
 				EB3866551D906D1100DE4D9E /* LaunchScreen.storyboard */,
 				EB3866581D906D1100DE4D9E /* Info.plist */,
 				EB3866501D906D1100DE4D9E /* AlarmClock.xcdatamodeld */,
+				EB40C8B91D9602FF00AE6DDF /* Stinkin Boop Font.ttf */,
+				EB40C8BB1D9605EA00AE6DDF /* RACE1 Brannt Chiseled NCV.ttf */,
+				EB402DF81D9B701C00B7C8AE /* digital-7 (italic).ttf */,
+				EB402DF91D9B701C00B7C8AE /* digital-7 (mono italic).ttf */,
+				EB402DFA1D9B701C00B7C8AE /* digital-7 (mono).ttf */,
+				EB402DFB1D9B701C00B7C8AE /* digital-7.ttf */,
 				EB3866631D90A2FC00DE4D9E /* Assets.xcassets */,
 			);
 			path = AlarmClock;
@@ -176,14 +194,20 @@
 			files = (
 				EB3866761D92656200DE4D9E /* bombsaway.mp3 in Resources */,
 				EB3866741D92656200DE4D9E /* buzzbuzz.mp3 in Resources */,
+				EB40C8BA1D9604BD00AE6DDF /* Stinkin Boop Font.ttf in Resources */,
 				EB3866791D92656200DE4D9E /* missilecommand.mp3 in Resources */,
 				EB38667A1D92656200DE4D9E /* oldtimebuzzer.mp3 in Resources */,
 				EB3866781D92656200DE4D9E /* tornadoally.mp3 in Resources */,
 				EB3866731D92656200DE4D9E /* railroadcrossing.mp3 in Resources */,
 				EB3866681D92352F00DE4D9E /* foghorn.mp3 in Resources */,
+				EB402DFD1D9B7E1800B7C8AE /* digital-7.ttf in Resources */,
 				EB3866751D92656200DE4D9E /* wartime.mp3 in Resources */,
+				EB402E001D9B7E2200B7C8AE /* digital-7 (italic).ttf in Resources */,
 				EB3866571D906D1100DE4D9E /* LaunchScreen.storyboard in Resources */,
+				EB402DFE1D9B7E1C00B7C8AE /* digital-7 (mono).ttf in Resources */,
 				EB38667B1D92656200DE4D9E /* aliens.mp3 in Resources */,
+				EB40C8BC1D96062400AE6DDF /* RACE1 Brannt Chiseled NCV.ttf in Resources */,
+				EB402DFF1D9B7E1F00B7C8AE /* digital-7 (mono italic).ttf in Resources */,
 				EB3866641D90A2FC00DE4D9E /* Assets.xcassets in Resources */,
 				EB38664F1D906D1100DE4D9E /* Main.storyboard in Resources */,
 				EB3866771D92656200DE4D9E /* firealarm.mp3 in Resources */,

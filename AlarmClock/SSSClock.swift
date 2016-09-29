@@ -53,15 +53,11 @@ class SSSClock: TimeKeeper {
     @objc func tick() {
         let systemTime = Date()
         let timeFormatter = DateFormatter()
-        timeFormatter.timeStyle = .medium
+        //timeFormatter.timeStyle = .long
         timeFormatter.locale = Locale(identifier: "en_US")
         currentTime = DateFormatter.localizedString(from: systemTime, dateStyle: .none, timeStyle: .medium)
         timeKeeperDelegate?.updateClockLabel(currentTime: currentTime)
     }
-    
-//    func updateClockLabel(currentTime: String) {
-//        return currentTime
-//    }
     
     
 }
