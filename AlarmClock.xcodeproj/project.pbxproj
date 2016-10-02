@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB33DD201D9F07190000CDAB /* SSSAlarmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB33DD1F1D9F07190000CDAB /* SSSAlarmController.swift */; };
 		EB38664A1D906D1100DE4D9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3866491D906D1100DE4D9E /* AppDelegate.swift */; };
 		EB38664C1D906D1100DE4D9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38664B1D906D1100DE4D9E /* ViewController.swift */; };
 		EB38664F1D906D1100DE4D9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB38664D1D906D1100DE4D9E /* Main.storyboard */; };
@@ -30,11 +31,15 @@
 		EB402DFE1D9B7E1C00B7C8AE /* digital-7 (mono).ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB402DFA1D9B701C00B7C8AE /* digital-7 (mono).ttf */; };
 		EB402DFF1D9B7E1F00B7C8AE /* digital-7 (mono italic).ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB402DF91D9B701C00B7C8AE /* digital-7 (mono italic).ttf */; };
 		EB402E001D9B7E2200B7C8AE /* digital-7 (italic).ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB402DF81D9B701C00B7C8AE /* digital-7 (italic).ttf */; };
+		EB402E051D9DBAE300B7C8AE /* SSSSetupAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB402E041D9DBAE300B7C8AE /* SSSSetupAlarmViewController.swift */; };
+		EB402E071D9DBAF600B7C8AE /* SSSSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB402E061D9DBAF600B7C8AE /* SSSSettingsViewController.swift */; };
+		EB402E091D9DBC1600B7C8AE /* SSSAddAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB402E081D9DBC1600B7C8AE /* SSSAddAlarmViewController.swift */; };
 		EB40C8BA1D9604BD00AE6DDF /* Stinkin Boop Font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB40C8B91D9602FF00AE6DDF /* Stinkin Boop Font.ttf */; };
 		EB40C8BC1D96062400AE6DDF /* RACE1 Brannt Chiseled NCV.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB40C8BB1D9605EA00AE6DDF /* RACE1 Brannt Chiseled NCV.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB33DD1F1D9F07190000CDAB /* SSSAlarmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSSAlarmController.swift; sourceTree = "<group>"; };
 		EB3866461D906D1100DE4D9E /* AlarmClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlarmClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB3866491D906D1100DE4D9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB38664B1D906D1100DE4D9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +65,9 @@
 		EB402DF91D9B701C00B7C8AE /* digital-7 (mono italic).ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital-7 (mono italic).ttf"; sourceTree = "<group>"; };
 		EB402DFA1D9B701C00B7C8AE /* digital-7 (mono).ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital-7 (mono).ttf"; sourceTree = "<group>"; };
 		EB402DFB1D9B701C00B7C8AE /* digital-7.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital-7.ttf"; sourceTree = "<group>"; };
+		EB402E041D9DBAE300B7C8AE /* SSSSetupAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SSSSetupAlarmViewController.swift; path = ../SSSSetupAlarmViewController.swift; sourceTree = "<group>"; };
+		EB402E061D9DBAF600B7C8AE /* SSSSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SSSSettingsViewController.swift; path = ../SSSSettingsViewController.swift; sourceTree = "<group>"; };
+		EB402E081D9DBC1600B7C8AE /* SSSAddAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSSAddAlarmViewController.swift; sourceTree = "<group>"; };
 		EB40C8B91D9602FF00AE6DDF /* Stinkin Boop Font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stinkin Boop Font.ttf"; sourceTree = "<group>"; };
 		EB40C8BB1D9605EA00AE6DDF /* RACE1 Brannt Chiseled NCV.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RACE1 Brannt Chiseled NCV.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,20 +104,19 @@
 			children = (
 				EB3866691D92646E00DE4D9E /* AlarmSounds */,
 				EB3866491D906D1100DE4D9E /* AppDelegate.swift */,
+				EB402E081D9DBC1600B7C8AE /* SSSAddAlarmViewController.swift */,
+				EB33DD1F1D9F07190000CDAB /* SSSAlarmController.swift */,
 				EB3866651D90A4D800DE4D9E /* SSSAudioController.swift */,
 				EB3866601D90A1C300DE4D9E /* AudioClip.swift */,
 				EB3BED491D93555400AB8480 /* SSSClock.swift */,
+				EB402E061D9DBAF600B7C8AE /* SSSSettingsViewController.swift */,
+				EB402E041D9DBAE300B7C8AE /* SSSSetupAlarmViewController.swift */,
 				EB38664B1D906D1100DE4D9E /* ViewController.swift */,
 				EB38664D1D906D1100DE4D9E /* Main.storyboard */,
 				EB3866551D906D1100DE4D9E /* LaunchScreen.storyboard */,
 				EB3866581D906D1100DE4D9E /* Info.plist */,
 				EB3866501D906D1100DE4D9E /* AlarmClock.xcdatamodeld */,
-				EB40C8B91D9602FF00AE6DDF /* Stinkin Boop Font.ttf */,
-				EB40C8BB1D9605EA00AE6DDF /* RACE1 Brannt Chiseled NCV.ttf */,
-				EB402DF81D9B701C00B7C8AE /* digital-7 (italic).ttf */,
-				EB402DF91D9B701C00B7C8AE /* digital-7 (mono italic).ttf */,
-				EB402DFA1D9B701C00B7C8AE /* digital-7 (mono).ttf */,
-				EB402DFB1D9B701C00B7C8AE /* digital-7.ttf */,
+				EB402E011D9DBA5D00B7C8AE /* Fonts */,
 				EB3866631D90A2FC00DE4D9E /* Assets.xcassets */,
 			);
 			path = AlarmClock;
@@ -130,6 +137,19 @@
 				EB3866671D92352F00DE4D9E /* foghorn.mp3 */,
 			);
 			name = AlarmSounds;
+			sourceTree = "<group>";
+		};
+		EB402E011D9DBA5D00B7C8AE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EB40C8B91D9602FF00AE6DDF /* Stinkin Boop Font.ttf */,
+				EB40C8BB1D9605EA00AE6DDF /* RACE1 Brannt Chiseled NCV.ttf */,
+				EB402DF81D9B701C00B7C8AE /* digital-7 (italic).ttf */,
+				EB402DF91D9B701C00B7C8AE /* digital-7 (mono italic).ttf */,
+				EB402DFA1D9B701C00B7C8AE /* digital-7 (mono).ttf */,
+				EB402DFB1D9B701C00B7C8AE /* digital-7.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,7 +242,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB3BED4A1D93555400AB8480 /* SSSClock.swift in Sources */,
+				EB402E051D9DBAE300B7C8AE /* SSSSetupAlarmViewController.swift in Sources */,
 				EB3866611D90A1C300DE4D9E /* AudioClip.swift in Sources */,
+				EB33DD201D9F07190000CDAB /* SSSAlarmController.swift in Sources */,
+				EB402E071D9DBAF600B7C8AE /* SSSSettingsViewController.swift in Sources */,
+				EB402E091D9DBC1600B7C8AE /* SSSAddAlarmViewController.swift in Sources */,
 				EB38664C1D906D1100DE4D9E /* ViewController.swift in Sources */,
 				EB3866521D906D1100DE4D9E /* AlarmClock.xcdatamodeld in Sources */,
 				EB3866661D90A4D800DE4D9E /* SSSAudioController.swift in Sources */,

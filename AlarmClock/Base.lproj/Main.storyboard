@@ -6,6 +6,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="digital-7 (mono italic).ttf">
+            <string>Digital-7MonoItalic</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -35,16 +40,25 @@
                                 <color key="shadowColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <size key="shadowOffset" width="-4" height="-1"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i04-6d-umM">
+                                <fontDescription key="fontDescription" name="Digital-7MonoItalic" family="Digital-7" pointSize="24"/>
+                                <color key="textColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="KPm-EC-yUI" secondAttribute="trailing" constant="-5" id="3X2-Dl-SCD"/>
-                            <constraint firstItem="KPm-EC-yUI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-25" id="8mn-cc-7Dq"/>
-                            <constraint firstItem="Uzn-mn-FZ3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-36" id="LgZ-Zj-1TP">
-                                <variation key="heightClass=compact" constant="0.0"/>
+                            <constraint firstItem="KPm-EC-yUI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-18" id="8mn-cc-7Dq">
+                                <variation key="widthClass=regular" constant="-32"/>
                             </constraint>
-                            <constraint firstItem="Uzn-mn-FZ3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="1" id="Pg5-Ix-hp9"/>
+                            <constraint firstItem="Uzn-mn-FZ3" firstAttribute="top" secondItem="i04-6d-umM" secondAttribute="bottom" constant="-12" id="GGb-6x-P3m"/>
+                            <constraint firstItem="Uzn-mn-FZ3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-44" id="LgZ-Zj-1TP">
+                                <variation key="heightClass=compact" constant="-15"/>
+                            </constraint>
+                            <constraint firstItem="i04-6d-umM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="ORC-VA-aiu"/>
+                            <constraint firstItem="Uzn-mn-FZ3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="Pg5-Ix-hp9"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KPm-EC-yUI" secondAttribute="bottom" constant="-5" id="Xvb-ci-HJ2"/>
                             <constraint firstItem="Uzn-mn-FZ3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="1" id="iQi-sU-iNt">
                                 <variation key="widthClass=compact" constant="-9"/>
@@ -56,15 +70,75 @@
                                 <variation key="heightClass=compact" constant="100"/>
                             </constraint>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="iQi-sU-iNt"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="KPm-EC-yUI" id="l0D-ny-UXi"/>
-                        <outlet property="clockLabel" destination="Uzn-mn-FZ3" id="02p-GT-XpF"/>
+                        <outlet property="dateLabel" destination="i04-6d-umM" id="4a3-mz-Oxj"/>
+                        <outlet property="timeLabel" destination="Uzn-mn-FZ3" id="V8Y-J3-9YF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="260.625" y="41.197183098591552"/>
+            <point key="canvasLocation" x="259.4202898550725" y="40.760869565217398"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="f78-5R-Poa">
+            <objects>
+                <viewController id="fSM-gR-UJO" customClass="SSSSettingsViewController" customModule="AlarmClock" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tGD-UW-0Af"/>
+                        <viewControllerLayoutGuide type="bottom" id="ulO-Dc-oKS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xnO-Za-33n">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ON-UH-feB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1468" y="217"/>
+        </scene>
+        <!--Setup Alarm View Controller-->
+        <scene sceneID="6PX-wP-4Lp">
+            <objects>
+                <viewController id="3wj-8q-IHT" customClass="SSSSetupAlarmViewController" customModule="AlarmClock" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Obx-Uk-u3y"/>
+                        <viewControllerLayoutGuide type="bottom" id="Iqe-qK-WnP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4I9-m9-dQe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vor-KG-jDR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1472" y="-585"/>
+        </scene>
+        <!--Add Alarm View Controller-->
+        <scene sceneID="VYD-qX-p8U">
+            <objects>
+                <viewController id="Faz-Q5-BDs" customClass="SSSAddAlarmViewController" customModule="AlarmClock" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JRJ-dB-nWM"/>
+                        <viewControllerLayoutGuide type="bottom" id="BWp-eL-cGr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sz3-0J-T51">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BDr-Gg-Na7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2495" y="-586"/>
         </scene>
     </scenes>
     <resources>

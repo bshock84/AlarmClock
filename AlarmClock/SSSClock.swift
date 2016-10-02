@@ -9,9 +9,15 @@
 import Foundation
 import UIKit
 
+
+// Delegates
+
 protocol TimeKeeperDelegate {
-    func updateClockLabel(currentTime: String)
+    func updateClockLabel(currentTime: String, weekdayString: String)
 }
+
+
+// Protocols
 
 protocol TimeKeeper {
     var seconds: Int { get set }
@@ -23,6 +29,8 @@ protocol TimeKeeper {
     func stopClock()
     func tick()
 }
+
+// Classes
 
 class SSSClock: TimeKeeper {
     
@@ -51,13 +59,48 @@ class SSSClock: TimeKeeper {
     }
     
     @objc func tick() {
+        
+        // pulling the
         let systemTime = Date()
         let timeFormatter = DateFormatter()
-        //timeFormatter.timeStyle = .long
         timeFormatter.locale = Locale(identifier: "en_US")
         currentTime = DateFormatter.localizedString(from: systemTime, dateStyle: .none, timeStyle: .medium)
-        timeKeeperDelegate?.updateClockLabel(currentTime: currentTime)
+        
+        timeFormatter.dateFormat = "MM-DD-YYY"
+        let weekday = calendar.component(.weekday, from: systemTime)
+        
+        var weekDayString: String
+        
+        switch weekday {
+            case 1: weekDayString = "Sun"
+            case 2: weekDayString = "Mon"
+            case 3: weekDayString = "Tue"
+            case 4: weekDayString = "Wed"
+            case 5: weekDayString = "Thu"
+            case 6: weekDayString = "Fri"
+            case 7: weekDayString = "Sat"
+            default: weekDayString = ""
+        }
+        
+        timeKeeperDelegate?.updateClockLabel(currentTime: currentTime, weekdayString: weekDayString)
     }
     
-    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
