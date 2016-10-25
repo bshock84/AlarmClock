@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		EB33DD201D9F07190000CDAB /* SSSAlarmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB33DD1F1D9F07190000CDAB /* SSSAlarmController.swift */; };
+		EB34E6B91DBCBCE0004A6609 /* alarmErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB34E6B81DBCBCE0004A6609 /* alarmErrors.swift */; };
+		EB34E6BB1DBF2E55004A6609 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB34E6BA1DBF2E55004A6609 /* AlarmTableViewCell.swift */; };
+		EB34E6BF1DBF49DD004A6609 /* AlarmTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB34E6BE1DBF49DD004A6609 /* AlarmTableViewController.swift */; };
 		EB38664A1D906D1100DE4D9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3866491D906D1100DE4D9E /* AppDelegate.swift */; };
 		EB38664C1D906D1100DE4D9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38664B1D906D1100DE4D9E /* ViewController.swift */; };
 		EB38664F1D906D1100DE4D9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB38664D1D906D1100DE4D9E /* Main.storyboard */; };
@@ -40,6 +43,9 @@
 
 /* Begin PBXFileReference section */
 		EB33DD1F1D9F07190000CDAB /* SSSAlarmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSSAlarmController.swift; sourceTree = "<group>"; };
+		EB34E6B81DBCBCE0004A6609 /* alarmErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = alarmErrors.swift; sourceTree = "<group>"; };
+		EB34E6BA1DBF2E55004A6609 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
+		EB34E6BE1DBF49DD004A6609 /* AlarmTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmTableViewController.swift; sourceTree = "<group>"; };
 		EB3866461D906D1100DE4D9E /* AlarmClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlarmClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB3866491D906D1100DE4D9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB38664B1D906D1100DE4D9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +110,9 @@
 			children = (
 				EB3866691D92646E00DE4D9E /* AlarmSounds */,
 				EB3866491D906D1100DE4D9E /* AppDelegate.swift */,
+				EB34E6BE1DBF49DD004A6609 /* AlarmTableViewController.swift */,
+				EB34E6BA1DBF2E55004A6609 /* AlarmTableViewCell.swift */,
+				EB34E6B81DBCBCE0004A6609 /* alarmErrors.swift */,
 				EB402E081D9DBC1600B7C8AE /* SSSAddAlarmViewController.swift */,
 				EB33DD1F1D9F07190000CDAB /* SSSAlarmController.swift */,
 				EB3866651D90A4D800DE4D9E /* SSSAudioController.swift */,
@@ -250,7 +259,10 @@
 				EB38664C1D906D1100DE4D9E /* ViewController.swift in Sources */,
 				EB3866521D906D1100DE4D9E /* AlarmClock.xcdatamodeld in Sources */,
 				EB3866661D90A4D800DE4D9E /* SSSAudioController.swift in Sources */,
+				EB34E6B91DBCBCE0004A6609 /* alarmErrors.swift in Sources */,
+				EB34E6BF1DBF49DD004A6609 /* AlarmTableViewController.swift in Sources */,
 				EB38664A1D906D1100DE4D9E /* AppDelegate.swift in Sources */,
+				EB34E6BB1DBF2E55004A6609 /* AlarmTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

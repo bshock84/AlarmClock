@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="15F34" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Alarms" syncable="YES">
+    <entity name="Alarms" representedClassName="SSSAlarmController" syncable="YES">
         <attribute name="alarmIsActive" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="alarmSound" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="alarmTime" optional="YES" attributeType="String" syncable="YES"/>

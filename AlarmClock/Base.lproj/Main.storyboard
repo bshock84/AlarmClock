@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3wj-8q-IHT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -115,12 +115,110 @@
                     <view key="view" contentMode="scaleToFill" id="4I9-m9-dQe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Urw-RP-a6G">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="2L3-hu-XHa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" image="addAlarmButton3"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lT0-Nl-3WJ">
+                                <color key="backgroundColor" red="0.32156862749999998" green="0.34901960780000002" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="alarmCell" rowHeight="90" id="1z9-9b-oAV" customClass="AlarmTableViewCell" customModule="AlarmClock" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1z9-9b-oAV" id="9on-QW-aku">
+                                            <frame key="frameInset" width="414" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKO-HV-dWh">
+                                                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                                    <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sound:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="qGH-yJ-ixw">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeats every week" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="7L1-Qc-qn5">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Buzz Buzz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Bwd-PT-2IJ">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3jB-Ag-cob"/>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Bwd-PT-2IJ" firstAttribute="leading" secondItem="qGH-yJ-ixw" secondAttribute="trailing" constant="2" id="05p-1o-CeY"/>
+                                                <constraint firstItem="Bwd-PT-2IJ" firstAttribute="top" secondItem="9on-QW-aku" secondAttribute="topMargin" id="0Rl-8i-m9x"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Bwd-PT-2IJ" secondAttribute="trailing" constant="78" id="1cg-uN-iH0"/>
+                                                <constraint firstItem="iKO-HV-dWh" firstAttribute="top" secondItem="9on-QW-aku" secondAttribute="topMargin" id="2wc-lk-1CU"/>
+                                                <constraint firstItem="qGH-yJ-ixw" firstAttribute="leading" secondItem="iKO-HV-dWh" secondAttribute="trailing" constant="12" id="8fo-6R-04T"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="7L1-Qc-qn5" secondAttribute="trailing" constant="78" id="EBY-1j-bky"/>
+                                                <constraint firstItem="7L1-Qc-qn5" firstAttribute="leading" secondItem="iKO-HV-dWh" secondAttribute="trailing" constant="12" id="Jd3-Qj-qEk"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="7L1-Qc-qn5" secondAttribute="bottom" constant="3" id="QQH-H6-jNE"/>
+                                                <constraint firstItem="3jB-Ag-cob" firstAttribute="top" secondItem="9on-QW-aku" secondAttribute="topMargin" constant="21" id="Szk-gb-ZuR"/>
+                                                <constraint firstItem="iKO-HV-dWh" firstAttribute="bottom" secondItem="9on-QW-aku" secondAttribute="bottomMargin" id="TgK-25-d6x"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="3jB-Ag-cob" secondAttribute="bottom" constant="21" id="VDM-p2-Hcn"/>
+                                                <constraint firstItem="iKO-HV-dWh" firstAttribute="leading" secondItem="9on-QW-aku" secondAttribute="leadingMargin" id="VWO-wu-lGb"/>
+                                                <constraint firstItem="7L1-Qc-qn5" firstAttribute="top" secondItem="Bwd-PT-2IJ" secondAttribute="bottom" constant="5" id="YtE-r2-jru"/>
+                                                <constraint firstItem="7L1-Qc-qn5" firstAttribute="top" secondItem="Bwd-PT-2IJ" secondAttribute="bottom" constant="5" id="gFc-YH-GmJ"/>
+                                                <constraint firstItem="7L1-Qc-qn5" firstAttribute="top" secondItem="qGH-yJ-ixw" secondAttribute="bottom" constant="5" id="hVr-Zz-0UA"/>
+                                                <constraint firstItem="7L1-Qc-qn5" firstAttribute="leading" secondItem="iKO-HV-dWh" secondAttribute="trailing" constant="12" id="huL-js-D5u"/>
+                                                <constraint firstItem="Bwd-PT-2IJ" firstAttribute="leading" secondItem="qGH-yJ-ixw" secondAttribute="trailing" constant="2" id="mPq-PA-I9I"/>
+                                                <constraint firstItem="qGH-yJ-ixw" firstAttribute="top" secondItem="9on-QW-aku" secondAttribute="topMargin" id="oDV-0G-cP7"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="3jB-Ag-cob" secondAttribute="trailing" constant="15" id="tMX-Wf-39w"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="alarmActivatedSwitch" destination="3jB-Ag-cob" id="SAg-w1-FeI"/>
+                                            <outlet property="alarmRepeatInfoLabel" destination="7L1-Qc-qn5" id="cS6-x2-eN9"/>
+                                            <outlet property="alarmTimeLable" destination="iKO-HV-dWh" id="Eme-gQ-9gs"/>
+                                            <outlet property="soundClipLabel" destination="Bwd-PT-2IJ" id="dhi-Og-eHc"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BKC-3A-GLJ">
+                                <items>
+                                    <navigationItem title="Setup Alarms" id="xDb-Sf-2au">
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="Mdh-re-Onm"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Ubw-tJ-xRu"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.32156862745098042" green="0.34509803921568627" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="lT0-Nl-3WJ" secondAttribute="trailing" id="0GZ-4B-AG8"/>
+                            <constraint firstItem="lT0-Nl-3WJ" firstAttribute="leading" secondItem="4I9-m9-dQe" secondAttribute="leading" id="0qv-e8-u1g"/>
+                            <constraint firstItem="BKC-3A-GLJ" firstAttribute="top" secondItem="Obx-Uk-u3y" secondAttribute="bottom" id="CQs-Lq-t5O"/>
+                            <constraint firstItem="BKC-3A-GLJ" firstAttribute="leading" secondItem="4I9-m9-dQe" secondAttribute="leading" id="Fbn-Va-8ms"/>
+                            <constraint firstItem="Urw-RP-a6G" firstAttribute="top" secondItem="lT0-Nl-3WJ" secondAttribute="bottom" constant="20" id="Je4-tF-kcI"/>
+                            <constraint firstAttribute="trailing" secondItem="BKC-3A-GLJ" secondAttribute="trailing" id="P9j-wG-h6V"/>
+                            <constraint firstItem="Iqe-qK-WnP" firstAttribute="top" secondItem="Urw-RP-a6G" secondAttribute="bottom" constant="65" id="XG0-yo-vIl"/>
+                            <constraint firstItem="Urw-RP-a6G" firstAttribute="trailing" secondItem="4I9-m9-dQe" secondAttribute="trailingMargin" id="arS-qU-qaE"/>
+                            <constraint firstItem="Urw-RP-a6G" firstAttribute="leading" secondItem="4I9-m9-dQe" secondAttribute="leadingMargin" id="o9p-EZ-Oqt"/>
+                            <constraint firstItem="lT0-Nl-3WJ" firstAttribute="top" secondItem="BKC-3A-GLJ" secondAttribute="bottom" id="vfO-Tl-Pjx"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableViewOutlet" destination="lT0-Nl-3WJ" id="o5C-lF-xba"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vor-KG-jDR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1472" y="-585"/>
+            <point key="canvasLocation" x="1471.0144927536232" y="-585.32608695652175"/>
         </scene>
         <!--Add Alarm View Controller-->
         <scene sceneID="VYD-qX-p8U">
@@ -142,6 +240,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="addAlarmButton3" width="161" height="51"/>
         <image name="clockRadioPortrait" width="782" height="1336"/>
     </resources>
 </document>
