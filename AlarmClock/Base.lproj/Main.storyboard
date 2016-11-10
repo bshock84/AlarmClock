@@ -107,7 +107,7 @@
         <!--Setup Alarm View Controller-->
         <scene sceneID="6PX-wP-4Lp">
             <objects>
-                <viewController id="3wj-8q-IHT" customClass="SSSSetupAlarmViewController" customModule="AlarmClock" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="setupAlarmsViewController" id="3wj-8q-IHT" customClass="SSSSetupAlarmViewController" customModule="AlarmClock" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Obx-Uk-u3y"/>
                         <viewControllerLayoutGuide type="bottom" id="Iqe-qK-WnP"/>
@@ -132,7 +132,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1z9-9b-oAV" id="9on-QW-aku">
-                                            <frame key="frameInset" width="414" height="89.666666666666671"/>
+                                            <frame key="frameInset" width="414" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" semanticContentAttribute="playback" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3jB-Ag-cob">
@@ -231,6 +231,7 @@
                     <connections>
                         <outlet property="editButton" destination="Ubw-tJ-xRu" id="MTq-G1-QkK"/>
                         <outlet property="tableViewOutlet" destination="lT0-Nl-3WJ" id="o5C-lF-xba"/>
+                        <segue destination="Faz-Q5-BDs" kind="show" identifier="editAlarmSeque" id="764-Aa-p31"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vor-KG-jDR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -240,7 +241,7 @@
         <!--Title-->
         <scene sceneID="VYD-qX-p8U">
             <objects>
-                <viewController id="Faz-Q5-BDs" customClass="SSSAddAlarmViewController" customModule="AlarmClock" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="editAlarmViewController" id="Faz-Q5-BDs" customClass="SSSAddAlarmViewController" customModule="AlarmClock" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JRJ-dB-nWM"/>
                         <viewControllerLayoutGuide type="bottom" id="BWp-eL-cGr"/>

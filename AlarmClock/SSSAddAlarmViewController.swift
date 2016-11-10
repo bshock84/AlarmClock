@@ -11,15 +11,19 @@ import UIKit
 
 
 
-class SSSAddAlarmViewController: UIViewController, UITableViewDelegate /*, UITableViewDataSource*/ {
+class SSSAddAlarmViewController: UIViewController, UITableViewDelegate, AlarmWillEditDelegate {
 
     let alarmController = SSSAlarmController.sharedInstance
-    
+    var alarmToEdit: Alarm?
+    let setupAlarmViewController = SSSSetupAlarmViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupAlarmViewController.editDelegate = self
+        
 
-        //tableView.numberOfSections(in: <#T##UITableView#>)
+        print(alarmToEdit)
+        
         // Do any additional setup after loading the view.
     }
 
@@ -29,6 +33,10 @@ class SSSAddAlarmViewController: UIViewController, UITableViewDelegate /*, UITab
     }
     
 
+    func pushAlarmToViewController(alarm: Alarm) {
+        print("deleagate has been called")
+        alarmToEdit = alarm
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

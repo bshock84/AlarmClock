@@ -8,11 +8,23 @@
 
 import UIKit
 
+
+//Protocols
+
+protocol AlarmWillEditDelegate {
+    
+    func pushAlarmToViewController(alarm: Alarm)
+}
+
+// Classes
+
 class SSSSetupAlarmViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var tableViewOutlet: UITableView!
     let alarmController = SSSAlarmController.sharedInstance
+    var editDelegate: AlarmWillEditDelegate?
+    var alarmToEdit: Alarm?
     
     @IBAction func editAlarmRow(_ sender: AnyObject) {
         if tableViewOutlet.isEditing {
@@ -63,8 +75,22 @@ class SSSSetupAlarmViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         print("I touched the accessory button for index \(indexPath.row)")
         
-        let alarmToEdit = alarmController.editAlarm(alarmID: indexPath.row)
+        guard let alarmToEdit = alarmController.editAlarm(alarmID: indexPath.row) else {
+                print(AlarmErrors.alarmNotFound.rawValue)
+                return
+        }
+        self.alarmToEdit = alarmToEdit
+        performSegue(withIdentifier: "editAlarmSeque", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editAlarmSeque" {
+            let editVC = segue.destination as! SSSAddAlarmViewController
+            editVC.alarmToEdit = alarmToEdit
+        }
+    }
+    
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "alarmCell"
