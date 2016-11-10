@@ -11,8 +11,9 @@ import UIKit
 
 
 
-class SSSAddAlarmViewController: UIViewController {
+class SSSAddAlarmViewController: UIViewController, UITableViewDelegate /*, UITableViewDataSource*/ {
 
+    let alarmController = SSSAlarmController.sharedInstance
     
     
     override func viewDidLoad() {
@@ -28,6 +29,25 @@ class SSSAddAlarmViewController: UIViewController {
     }
     
 
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        //Only 2 rows are needed here for the options that are being used.
+        return 2
+    }
+    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cellIdentifier = "AlarmEditFunctions"
+//        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+//       // let firstCell = AlarmEditingFuctions(
+//        
+//       // return cell
+//    }
+    
     /*
     // MARK: - Navigation
 

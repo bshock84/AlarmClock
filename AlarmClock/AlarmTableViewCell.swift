@@ -17,11 +17,40 @@ class AlarmTableViewCell: UITableViewCell {
     @IBOutlet weak var alarmActivatedSwitch: UISwitch!
     
     
+    
+    var alarmController = SSSAlarmController.sharedInstance
+    
+    @IBAction func alarmActivatedSwitchAction(_ sender: UISwitch) {
+        
+        if alarmController.existingAlarms[sender.tag].alarmIsActivated {
+            alarmController.existingAlarms[sender.tag].alarmIsActivated = false
+            alarmController.deactivateAlarm(alarmIndex: sender.tag)
+        } else {
+            alarmController.existingAlarms[sender.tag].alarmIsActivated = true
+            alarmController.activateAlarm(alarmIndex: sender.tag)
+        }
+        
+        print("**********\n The alarm to be changed is \(alarmController.existingAlarms[sender.tag])")
+
+       
+    }
+    
+   
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        //let mainViewController = SSSSetupAlarmViewController()
+        //sharedAlarmController = mainViewController.alarmController
+        print("awake from nib is being run now")
+        
     }
+    
+    
 
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

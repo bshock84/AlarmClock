@@ -9,27 +9,48 @@
 import Foundation
 import CoreData
 
+//Enums
+
+enum AlarmEditingFuctions: String {
+    case setRepeatBehaviour = "Repeats"
+    case setAudioClip = "Sound"
+}
+
+enum RepeatIntervalType: String {
+    case day = "day"
+    case week = "week"
+    case month = "month"
+    case year = "year"
+}
+
 // Structs
 
+
 struct Alarm {
-    var alarmID: Int
-    var alarmTime: String = "9:00 am"
-    var alarmWillRepeat: Bool = false
-    var alarmRepeatInterval: Double? = 0
-    var alarmIsActivated: Bool = false
-    var alarmSound: AudioClip = .BuzzBuzz
+    var alarmTime: String
+    var alarmWillRepeat: Bool
+    var alarmRepeatInterval: Int?
+    var alarmRepeatIntervalType: RepeatIntervalType?
+    var alarmIsActivated: Bool
+    var alarmSound: AudioClip
     
-    init(alarmID: Int) {
-        self.alarmID = alarmID
+    init() {
+        alarmTime = "9:00 AM"
+        alarmWillRepeat = false
+        alarmRepeatInterval = 0
+        alarmRepeatIntervalType = nil
+        alarmIsActivated = true
+        alarmSound = .BuzzBuzz
+        
     }
     
-    init(alarmID: Int, alarmTime: String, alarmWillRepeat: Bool, alarmRepeatInterval: Double?, alarmIsActivated: Bool, alarmSound: AudioClip) {
-        self.alarmID = alarmID
+    init(alarmTime: String, alarmWillRepeat: Bool, alarmRepeatInterval: Int?, alarmIsActivated: Bool, alarmSound: AudioClip, alarmRepeatIntervalType: RepeatIntervalType?) {
         self.alarmTime = alarmTime
         self.alarmWillRepeat = alarmWillRepeat
         self.alarmRepeatInterval = alarmRepeatInterval
         self.alarmSound = alarmSound
         self.alarmIsActivated = alarmIsActivated
+        self.alarmRepeatIntervalType = alarmRepeatIntervalType
     }
 }
 
@@ -37,48 +58,81 @@ struct Alarm {
 // Classes
 
 class SSSAlarmController {
-    let alarm4 = Alarm(alarmID: 4, alarmTime: "12:00 am", alarmWillRepeat: false, alarmRepeatInterval: nil, alarmIsActivated: false, alarmSound: .FogHorn)
+    
+    static let sharedInstance = SSSAlarmController()
+    private init() {}
+    
+    //TEST CASES **** DELETE THESE WHEN DONE WITH THEM
+    let alarm4 = Alarm(
+            alarmTime: "12:00 am",
+            alarmWillRepeat: false,
+            alarmRepeatInterval: nil,
+            alarmIsActivated: false,
+            alarmSound: .FogHorn,
+            alarmRepeatIntervalType: nil
+    )
     var existingAlarms: [Alarm] = [
-        Alarm(alarmID: 1),
-        Alarm(alarmID: 2, alarmTime: "10:00 am", alarmWillRepeat: true, alarmRepeatInterval: 2.0, alarmIsActivated: true, alarmSound: .Aliens),
-        Alarm(alarmID: 3, alarmTime: "11:00 am", alarmWillRepeat: false, alarmRepeatInterval: nil, alarmIsActivated: true, alarmSound: .BombsAway)
+        Alarm() ,
+        Alarm(
+            alarmTime: "10:00 am",
+            alarmWillRepeat: true,
+            alarmRepeatInterval: 2,
+            alarmIsActivated: true,
+            alarmSound: .Aliens,
+            alarmRepeatIntervalType: .day
+        ),
+        Alarm(
+            alarmTime: "11:00 am",
+            alarmWillRepeat: false,
+            alarmRepeatInterval: nil,
+            alarmIsActivated: true,
+            alarmSound: .BombsAway,
+            alarmRepeatIntervalType: nil)
     ]
     
     func test() {
         existingAlarms.append(alarm4)
         print(existingAlarms)
     }
+    
+    // END TEST CASES
+    
+    
     let CDManagedObject = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     
+    
     func createNewAlarm() -> Alarm {
+        let newAlarm = Alarm()
         
-        // Creates a unique ID Number for the alarm being created, so that it's easy to keep track of this particular alarm.
-        var IDAvailable: Bool = false
-        var alarmID = 1
-        while IDAvailable == false {
-            alarmID += 1
-            print(alarmID)
-            if existingAlarms[alarmID] == nil {
-                IDAvailable = true
-            }
-        }
-        
-        let newAlarm = Alarm(alarmID: alarmID)
-        existingAlarms[alarmID] = newAlarm
         
         return newAlarm
     }
     
     func editAlarm(alarmID: Int) -> Alarm? {
-        let alarmToEdit = existingAlarms[alarmID]
-        return alarmToEdit
+        if alarmID <= existingAlarms.count {
+            let alarmToEdit = existingAlarms[alarmID]
+            return alarmToEdit
+        } else {
+            print(AlarmErrors.alarmNotFound.rawValue)
+            return nil
+        }
     }
     
-    func activateAlarm() {
+    func deleteAlarm(alarm: Int) {
+        print(existingAlarms.count)
+        print(alarm)
+        if alarm <= existingAlarms.count {
+            existingAlarms.remove(at: alarm)
+        } else {
+            print(AlarmErrors.alarmNotFound.rawValue)
+        }
+    }
+    
+    func activateAlarm(alarmIndex: Int) {
         
     }
     
-    func deactivateAlarm() {
+    func deactivateAlarm(alarmIndex: Int) {
         
     }
     
@@ -89,4 +143,24 @@ class SSSAlarmController {
     func retrieveAlarmsFromDatabase() {
 
     }
+    
+    //Private Functions
+    
+//    private func getAlarmID() -> Int{
+//        // Creates a unique ID Number for the alarm being created, so that it's easy to keep track of this particular alarm.
+//        var IDAvailable: Bool = false
+//        var alarmID = 1
+//        while IDAvailable == false {
+//            for alarm in existingAlarms {
+//                if alarm.alarmID == alarmID {
+//                    IDAvailable = false
+//                    alarmID += 1
+//                    break
+//                } else {
+//                    IDAvailable = true
+//                }
+//            }
+//        }
+//        return alarmID
+//    }
 }
