@@ -11,7 +11,7 @@ import UIKit
 
 
 
-class SSSAddAlarmViewController: UIViewController, UITableViewDelegate, AlarmWillEditDelegate {
+class SSSAddAlarmViewController: UITableViewController, AlarmWillEditDelegate {
 
     let alarmController = SSSAlarmController.sharedInstance
     var alarmToEdit: Alarm?
@@ -38,15 +38,15 @@ class SSSAddAlarmViewController: UIViewController, UITableViewDelegate, AlarmWil
         alarmToEdit = alarm
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1
+//    }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        //Only 2 rows are needed here for the options that are being used.
-        return 2
-    }
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        
+//        //Only 2 rows are needed here for the options that are being used.
+//        return 2
+//    }
     
 //    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let cellIdentifier = "AlarmEditFunctions"
