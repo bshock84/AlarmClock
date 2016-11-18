@@ -58,7 +58,7 @@ class SSSAudioController {
         
     }
     
-    func playAlarmSound(audioClip: AudioClip) {
+    func prepareAlarmSound(audioClip: AudioClip) {
         let audioFilePath = Bundle.main.path(forResource: audioClip.rawValue, ofType: "mp3")
         let audioFileURL = URL(fileURLWithPath: audioFilePath!)
         activateAudioSession()
@@ -70,7 +70,15 @@ class SSSAudioController {
             print(audioPlayerError)
             return
         }
+        
+    }
+    
+    func playAlarm() {
         audioPlayer.play()
+    }
+    
+    func stopAlarm() {
+        audioPlayer.stop()
     }
     
 }

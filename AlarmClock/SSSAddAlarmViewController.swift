@@ -11,20 +11,39 @@ import UIKit
 
 
 
-class SSSAddAlarmViewController: UITableViewController, AlarmWillEditDelegate {
+class SSSAddAlarmViewController: UIViewController, AlarmWillEditDelegate {
 
     let alarmController = SSSAlarmController.sharedInstance
     var alarmToEdit: Alarm?
     let setupAlarmViewController = SSSSetupAlarmViewController()
     
+   
+    @IBOutlet weak var timePickerOutlet: UIDatePicker!
+    
+    @IBAction func timePickerDidChange(_ sender: AnyObject) {
+        print(timePickerOutlet.date)
+        print(DateFormatter.stringFromTime(time: timePickerOutlet.date))
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupAlarmViewController.editDelegate = self
+        //setupAlarmViewController.editDelegate = self
+        //print(alarmToEdit)
+        
+        timePickerOutlet.setDate((alarmToEdit?.alarmTime)!, animated: true)
         
 
-        print(alarmToEdit)
+        //print(alarmToEdit)
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "alarmMenuSegue" {
+            let embeddedVC = segue.destination as! SSSAlarmMenuTableViewController
+            embeddedVC.alarmToEdit = self.alarmToEdit
+        }
     }
 
     override func didReceiveMemoryWarning() {

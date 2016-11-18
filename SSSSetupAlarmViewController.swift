@@ -97,7 +97,7 @@ class SSSSetupAlarmViewController: UIViewController, UITableViewDelegate, UITabl
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! AlarmTableViewCell
         let alarm = alarmController.existingAlarms[indexPath.row]
         
-        cell.alarmTimeLable.text = alarm.alarmTime
+        cell.alarmTimeLable.text = DateFormatter.stringFromTime(time: alarm.alarmTime)
         cell.soundClipLabel.text = alarm.alarmSound.rawValue
         if alarm.alarmIsActivated == true {
             cell.alarmActivatedSwitch.isOn = true
@@ -105,11 +105,7 @@ class SSSSetupAlarmViewController: UIViewController, UITableViewDelegate, UITabl
             cell.alarmActivatedSwitch.isOn = false
         }
         if alarm.alarmWillRepeat {
-            if let intervalInfo = alarm.alarmRepeatInterval {
-                cell.alarmRepeatInfoLabel.text = "Alarm repeats every \(intervalInfo) \(alarm.alarmRepeatIntervalType!.rawValue)(s)"
-            } else {
-                cell.alarmRepeatInfoLabel.text = ""
-            }
+            cell.alarmRepeatInfoLabel.text = "Alarm Will Repeat"
         } else {
             cell.alarmRepeatInfoLabel.text = "Alarm will not repeat."
         }

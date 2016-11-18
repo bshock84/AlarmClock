@@ -16,12 +16,8 @@ enum AlarmEditingFuctions: String {
     case setAudioClip = "Sound"
 }
 
-enum RepeatIntervalType: String {
-    case day = "day"
-    case week = "week"
-    case month = "month"
-    case year = "year"
-}
+
+
 
 // Structs
 
@@ -33,33 +29,28 @@ struct Snooze {
 
 
 struct Alarm {
-    var alarmTime: String
+    var alarmTime: Date
     var alarmWillRepeat: Bool
-    var alarmRepeatInterval: Int?
-    var alarmRepeatIntervalType: RepeatIntervalType?
+    var alarmDaysOfWeeksToRepeat: [String : Bool] = ["Monday" : false, "Tuesday" : false, "Wednesday" : false, "Thursday" : false, "Friday" : false, "Saturday" : false, "Sunday" : false]
     var alarmIsActivated: Bool
     var alarmSound: AudioClip
     var alarmTitle: String
     var snooze = Snooze(snoozed: false, snoozeCounter: 0, originalAlarmTime: nil)
     
     init() {
-        alarmTime = "9:00 AM"
+        alarmTime = DateFormatter.timeFromString(time: "9:00 am")
         alarmWillRepeat = false
-        alarmRepeatInterval = 0
-        alarmRepeatIntervalType = nil
         alarmIsActivated = true
         alarmSound = .BuzzBuzz
         alarmTitle = "Alarm"
         
     }
     
-    init(alarmTime: String, alarmWillRepeat: Bool, alarmRepeatInterval: Int?, alarmIsActivated: Bool, alarmSound: AudioClip, alarmRepeatIntervalType: RepeatIntervalType?, alarmTitle: String) {
+    init(alarmTime: Date, alarmWillRepeat: Bool, alarmIsActivated: Bool, alarmSound: AudioClip, alarmTitle: String) {
         self.alarmTime = alarmTime
         self.alarmWillRepeat = alarmWillRepeat
-        self.alarmRepeatInterval = alarmRepeatInterval
         self.alarmSound = alarmSound
         self.alarmIsActivated = alarmIsActivated
-        self.alarmRepeatIntervalType = alarmRepeatIntervalType
         self.alarmTitle = alarmTitle
         
     }
@@ -75,32 +66,26 @@ class SSSAlarmController {
     
     //TEST CASES **** DELETE THESE WHEN DONE WITH THEM
     let alarm4 = Alarm(
-            alarmTime: "12:00 am",
+            alarmTime: DateFormatter.timeFromString(time: "9:00 am"),
             alarmWillRepeat: false,
-            alarmRepeatInterval: nil,
             alarmIsActivated: false,
             alarmSound: .FogHorn,
-            alarmRepeatIntervalType: nil,
             alarmTitle: "Alarm 1"
     )
     var existingAlarms: [Alarm] = [
         Alarm() ,
         Alarm(
-            alarmTime: "10:00 am",
+            alarmTime: DateFormatter.timeFromString(time: "10:00 pm"),
             alarmWillRepeat: true,
-            alarmRepeatInterval: 2,
             alarmIsActivated: true,
             alarmSound: .Aliens,
-            alarmRepeatIntervalType: .day,
             alarmTitle: "Alarm 2"
         ),
         Alarm(
-            alarmTime: "11:00 am",
+            alarmTime: DateFormatter.timeFromString(time: "11:00 am"),
             alarmWillRepeat: false,
-            alarmRepeatInterval: nil,
             alarmIsActivated: true,
             alarmSound: .BombsAway,
-            alarmRepeatIntervalType: nil,
             alarmTitle: "Alarm 3")
     ]
     
@@ -111,7 +96,7 @@ class SSSAlarmController {
     
     // END TEST CASES
     
-    
+    let audioController = SSSAudioController()
     let CDManagedObject = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     
     
@@ -133,27 +118,29 @@ class SSSAlarmController {
     }
     
     func snoozeAlarm(alarmID: Int) {
-        
+        //load the currently saved alarms from the database.
         retrieveAlarmsFromDatabase()
         
-        if existingAlarms[alarmID].snooze.snoozed == false {
-            existingAlarms[alarmID].snooze.originalAlarmTime = existingAlarms[alarmID].alarmTime
-            existingAlarms[alarmID].alarmTime += "9"
-            existingAlarms[alarmID].snooze.snoozeCounter += 1
-            existingAlarms[alarmID].snooze.snoozed = true
-            activateAlarm(alarmIndex: alarmID)
-        } else {
-            existingAlarms[alarmID].alarmTime += "9"
-            existingAlarms[alarmID].snooze.snoozeCounter += 1
-            activateAlarm(alarmIndex: alarmID)
-        }
+        //if the snooze button has not been pressed before, stop the alarm, save the original alarm time to the snooze struct, add 9 minutes to the alarm time, increment snoozeCounter, and set snooze to true.
+//        if existingAlarms[alarmID].snooze.snoozed == false {
+//            audioController.stopAlarm()
+//            existingAlarms[alarmID].snooze.originalAlarmTime = existingAlarms[alarmID].alarmTime
+//            existingAlarms[alarmID].alarmTime += "9"
+//            existingAlarms[alarmID].snooze.snoozeCounter += 1
+//            existingAlarms[alarmID].snooze.snoozed = true
+//            activateAlarm(alarmIndex: alarmID)
+//        } else {
+//            audioController.stopAlarm()
+//            existingAlarms[alarmID].alarmTime += "9"
+//            existingAlarms[alarmID].snooze.snoozeCounter += 1
+//            activateAlarm(alarmIndex: alarmID)
+//        }
         
         saveAlarmsToDatabase()
     }
     
     func deleteAlarm(alarm: Int) {
-        print(existingAlarms.count)
-        print(alarm)
+        //check to make sure the index exists, delete if it does, otherwise print and error.
         if alarm <= existingAlarms.count {
             existingAlarms.remove(at: alarm)
         } else {
@@ -162,7 +149,7 @@ class SSSAlarmController {
     }
     
     func activateAlarm(alarmIndex: Int) {
-        
+        audioController.prepareAlarmSound(audioClip: existingAlarms[alarmIndex].alarmSound)
     }
     
     func deactivateAlarm(alarmIndex: Int) {
