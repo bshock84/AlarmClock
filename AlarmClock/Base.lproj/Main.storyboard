@@ -21,7 +21,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clockRadioPortrait" translatesAutoresizingMaskIntoConstraints="NO" id="KPm-EC-yUI"/>
@@ -95,7 +95,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ulO-Dc-oKS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xnO-Za-33n">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -113,7 +113,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Iqe-qK-WnP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4I9-m9-dQe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Urw-RP-a6G">
@@ -129,10 +129,10 @@
                                 <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="alarmCell" editingAccessoryType="detailDisclosureButton" rowHeight="90" id="1z9-9b-oAV" customClass="AlarmTableViewCell" customModule="AlarmClock" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="90"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1z9-9b-oAV" id="9on-QW-aku">
-                                            <frame key="frameInset" width="414" height="89"/>
+                                            <frame key="frameInset" width="375" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" semanticContentAttribute="playback" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3jB-Ag-cob">
@@ -247,7 +247,7 @@
                         <viewControllerLayoutGuide type="bottom" id="BWp-eL-cGr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sz3-0J-T51">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TU0-bD-h3a">
@@ -285,7 +285,8 @@
                                     <action selector="timePickerDidChange:" destination="Faz-Q5-BDs" eventType="valueChanged" id="0nt-ZD-H6C"/>
                                 </connections>
                             </datePicker>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zI3-fO-6zo">
+                            <containerView opaque="NO" contentMode="scaleAspectFill" verticalCompressionResistancePriority="250" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zI3-fO-6zo">
+                                <frame key="frameInset" minY="466" width="375" height="127"/>
                                 <connections>
                                     <segue destination="fom-Zu-gq6" kind="embed" identifier="alarmMenuSegue" id="iWo-MJ-KgC"/>
                                 </connections>
@@ -296,7 +297,6 @@
                             <constraint firstItem="dgx-mp-1mf" firstAttribute="top" secondItem="dNk-2Y-Et4" secondAttribute="bottom" constant="74" id="47b-Hb-ioS"/>
                             <constraint firstAttribute="trailing" secondItem="TU0-bD-h3a" secondAttribute="trailing" id="63m-S9-YRC"/>
                             <constraint firstItem="dgx-mp-1mf" firstAttribute="leading" secondItem="sz3-0J-T51" secondAttribute="leading" id="9Vt-CR-WZt"/>
-                            <constraint firstItem="muW-Cd-gGe" firstAttribute="top" secondItem="zI3-fO-6zo" secondAttribute="bottom" constant="8" id="AKE-v5-GEm"/>
                             <constraint firstItem="TU0-bD-h3a" firstAttribute="top" secondItem="sz3-0J-T51" secondAttribute="top" constant="20" id="GbJ-M0-ahN"/>
                             <constraint firstItem="dNk-2Y-Et4" firstAttribute="top" secondItem="TU0-bD-h3a" secondAttribute="bottom" constant="74" id="HDd-Br-SLz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dNk-2Y-Et4" secondAttribute="trailing" constant="18" id="InZ-fD-aeX"/>
@@ -308,6 +308,7 @@
                             <constraint firstItem="zI3-fO-6zo" firstAttribute="leading" secondItem="sz3-0J-T51" secondAttribute="leading" id="kfX-2p-TwU"/>
                             <constraint firstAttribute="trailing" secondItem="zI3-fO-6zo" secondAttribute="trailing" id="mL9-z7-CZs"/>
                             <constraint firstItem="TU0-bD-h3a" firstAttribute="leading" secondItem="sz3-0J-T51" secondAttribute="leading" id="uQT-U6-CSu"/>
+                            <constraint firstItem="BWp-eL-cGr" firstAttribute="top" relation="lessThanOrEqual" secondItem="zI3-fO-6zo" secondAttribute="bottom" constant="74" id="wbw-Db-RFF"/>
                             <constraint firstItem="dNk-2Y-Et4" firstAttribute="leading" secondItem="sz3-0J-T51" secondAttribute="leadingMargin" constant="18" id="zxj-9K-coP"/>
                         </constraints>
                     </view>
@@ -324,83 +325,81 @@
         <scene sceneID="dKh-B7-Zil">
             <objects>
                 <tableViewController id="fom-Zu-gq6" customClass="SSSAlarmMenuTableViewController" customModule="AlarmClock" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jxa-xq-asF">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="196"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="static" style="plain" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jxa-xq-asF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="127"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
                             <tableViewSection id="lh1-ke-IrR">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="selectAudioCell" id="BLi-YJ-BCW" customClass="SelectAudioTableViewCell" customModule="AlarmClock" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BLi-YJ-BCW" id="G1P-86-XXY">
-                                            <frame key="frameInset" width="381" height="89"/>
+                                            <frame key="frameInset" width="342" height="63"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3KJ-zp-p9z">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3KJ-zp-p9z">
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Alarm Sound: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ApA-PI-QFe">
-                                                    <frame key="frameInset" minX="17" minY="34" width="108" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ApA-PI-QFe">
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Alarm Sound: ">
+                                                            <attributes>
+                                                                <font key="NSFont" size="20" name="AvenirNextCondensed-DemiBold"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="3KJ-zp-p9z" secondAttribute="bottom" constant="13" id="JsC-L1-8WE"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ApA-PI-QFe" secondAttribute="bottom" constant="13.25" id="KfO-MF-moR"/>
+                                                <constraint firstItem="ApA-PI-QFe" firstAttribute="top" secondItem="G1P-86-XXY" secondAttribute="topMargin" constant="13.25" id="UB9-X4-DSe"/>
+                                                <constraint firstItem="3KJ-zp-p9z" firstAttribute="top" secondItem="G1P-86-XXY" secondAttribute="topMargin" constant="13" id="WSX-Mm-gmv"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ApA-PI-QFe" secondAttribute="trailing" constant="210" id="YJl-tA-qtd"/>
+                                                <constraint firstItem="ApA-PI-QFe" firstAttribute="leading" secondItem="G1P-86-XXY" secondAttribute="leadingMargin" constant="10" id="am4-kC-hQX"/>
+                                                <constraint firstItem="3KJ-zp-p9z" firstAttribute="trailing" secondItem="G1P-86-XXY" secondAttribute="trailingMargin" constant="-10" id="uCm-GM-xbw"/>
+                                                <constraint firstItem="3KJ-zp-p9z" firstAttribute="leading" secondItem="ApA-PI-QFe" secondAttribute="trailing" constant="23" id="y3m-yO-qWP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="selectRepeatCell" id="cQk-gd-zsk">
+                                        <rect key="frame" x="0.0" y="64" width="375" height="64"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cQk-gd-zsk" id="xq5-cw-ldz">
+                                            <frame key="frameInset" width="342" height="63"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeats:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LaX-lo-20N">
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpR-Z8-GfP">
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="ApA-PI-QFe" secondAttribute="trailing" constant="248" id="Hhy-dt-QlP"/>
-                                                <constraint firstItem="3KJ-zp-p9z" firstAttribute="leading" secondItem="ApA-PI-QFe" secondAttribute="trailing" constant="81" id="J4g-HU-KaD"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="3KJ-zp-p9z" secondAttribute="bottom" constant="26" id="MS0-GV-pPC"/>
-                                                <constraint firstItem="ApA-PI-QFe" firstAttribute="leading" secondItem="G1P-86-XXY" secondAttribute="leadingMargin" constant="5" id="PUb-PD-AED"/>
-                                                <constraint firstItem="3KJ-zp-p9z" firstAttribute="top" secondItem="G1P-86-XXY" secondAttribute="topMargin" constant="26" id="aYu-mD-2Y1"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="ApA-PI-QFe" secondAttribute="bottom" constant="26" id="euz-0l-IcM"/>
-                                                <constraint firstItem="ApA-PI-QFe" firstAttribute="top" secondItem="G1P-86-XXY" secondAttribute="topMargin" constant="26" id="j70-p2-g5z"/>
+                                                <constraint firstItem="LaX-lo-20N" firstAttribute="top" secondItem="xq5-cw-ldz" secondAttribute="topMargin" constant="12" id="1xh-g9-HQm"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="bpR-Z8-GfP" secondAttribute="bottom" constant="13" id="Asz-kA-kCV"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="LaX-lo-20N" secondAttribute="trailing" constant="249" id="DCf-jo-LpL"/>
+                                                <constraint firstItem="bpR-Z8-GfP" firstAttribute="leading" relation="lessThanOrEqual" secondItem="LaX-lo-20N" secondAttribute="trailing" constant="15" id="TU1-Tn-xXi"/>
+                                                <constraint firstItem="LaX-lo-20N" firstAttribute="leading" secondItem="xq5-cw-ldz" secondAttribute="leadingMargin" constant="10" id="VYP-hq-4V2"/>
+                                                <constraint firstItem="bpR-Z8-GfP" firstAttribute="top" secondItem="xq5-cw-ldz" secondAttribute="topMargin" constant="12" id="Ymj-17-XQM"/>
+                                                <constraint firstItem="bpR-Z8-GfP" firstAttribute="trailing" secondItem="xq5-cw-ldz" secondAttribute="trailingMargin" constant="-10" id="fmo-Sr-j3U"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="LaX-lo-20N" secondAttribute="bottom" constant="13" id="qOu-ro-Nha"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="selectRepeatCell" id="cQk-gd-zsk">
-                                        <rect key="frame" x="0.0" y="90" width="414" height="90"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cQk-gd-zsk" id="xq5-cw-ldz">
-                                            <frame key="frameInset" width="381" height="89"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpR-Z8-GfP">
-                                                    <frame key="frameInset" minX="206" minY="34" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Repeat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LaX-lo-20N">
-                                                    <frame key="frameInset" minX="18" minY="34" width="54" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="selectRepeatCell" id="b8c-Br-KrT">
-                                        <rect key="frame" x="0.0" y="180" width="414" height="90"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b8c-Br-KrT" id="JgI-Jt-et1">
-                                            <frame key="frameInset" width="381" height="89"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yt6-jA-dJG">
-                                                    <frame key="frameInset" minX="195" minY="25" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -412,15 +411,17 @@
                     </tableView>
                     <connections>
                         <outlet property="menuTableOutlet" destination="Jxa-xq-asF" id="tCe-Xx-YaK"/>
+                        <outlet property="repeatDetailLabel" destination="bpR-Z8-GfP" id="8Yg-b9-3PJ"/>
+                        <outlet property="soundDetailLabel" destination="3KJ-zp-p9z" id="SBE-bg-RW8"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k2o-5f-H0E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3426" y="-508"/>
+            <point key="canvasLocation" x="3424.8000000000002" y="-508.69565217391306"/>
         </scene>
     </scenes>
     <resources>
-        <image name="addAlarmButton3" width="161" height="51"/>
+        <image name="addAlarmButton3" width="241" height="77"/>
         <image name="clockRadioPortrait" width="782" height="1336"/>
     </resources>
 </document>

@@ -43,6 +43,7 @@ class SSSAddAlarmViewController: UIViewController, AlarmWillEditDelegate {
         if segue.identifier == "alarmMenuSegue" {
             let embeddedVC = segue.destination as! SSSAlarmMenuTableViewController
             embeddedVC.alarmToEdit = self.alarmToEdit
+            //embeddedVC.view.translatesAutoresizingMaskIntoConstraints = false
         }
     }
 

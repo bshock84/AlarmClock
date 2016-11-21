@@ -10,18 +10,20 @@ import UIKit
 
 class SSSAlarmMenuTableViewController: UITableViewController {
     
-    @IBOutlet weak var alarmSoundDetailLabel: UILabel!
+    
+    @IBOutlet weak var soundDetailLabel: UILabel!
     @IBOutlet var menuTableOutlet: UITableView!
     @IBOutlet weak var repeatDetailLabel: UILabel!
+    
 
     var alarmToEdit: Alarm? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("*****\n\n\n\(alarmToEdit)\n\n\n*****")
+        print("*****\n\n\n\(alarmToEdit)\n\n\n\(alarmToEdit?.alarmSound.rawValue)\n\n*****")
         
-        let alarmToEditArray = [alarmToEdit]
+        setupMenuNavigation()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -33,30 +35,33 @@ class SSSAlarmMenuTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func setupMenuNavigation() {
+        soundDetailLabel.text = alarmToEdit?.alarmSound.rawValue
+        
+        for day in (alarmToEdit?.alarmDaysOfWeeksToRepeat)! {
+            if day.active == true {
+                repeatDetailLabel.text!.append(" \(day.shortName) ") 
+                print(repeatDetailLabel.text!)
+            }
+        }
+        
+        if repeatDetailLabel.text! == "" {
+            repeatDetailLabel.text = "Never"
+        }
+        //tableView.rowHeight = UITableViewAutomaticDimension
+        //tableView.rowHeight = 10
+        
+        
+    }
+    
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        
+//        //tableView.estimatedRowHeight = 30
+//        return UITableViewAutomaticDimension
+//    }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 2
-    }
-
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "selectAudioCell", for: indexPath)
-        let cell2 = tableView.
-        alarmSoundDetailLabel.text = alarmToEdit?.alarmSound.rawValue
-
-        return cell
-    }
-    
-    
-    
 
     /*
     // Override to support conditional editing of the table view.

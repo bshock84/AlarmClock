@@ -31,9 +31,17 @@ struct Snooze {
 struct Alarm {
     var alarmTime: Date
     var alarmWillRepeat: Bool
-    var alarmDaysOfWeeksToRepeat: [String : Bool] = ["Monday" : false, "Tuesday" : false, "Wednesday" : false, "Thursday" : false, "Friday" : false, "Saturday" : false, "Sunday" : false]
+    var alarmDaysOfWeeksToRepeat = [
+        (dayName: "Monday", shortName: "Mon", active: false),
+        (dayName: "Tuesday", shortName: "Tue", active: false),
+        (dayName: "Wednesday", shortName: "Wed", active: false),
+        (dayName: "Thursday", shortName: "Thu", active: false),
+        (dayName: "Friday", shortName: "Fri", active: false),
+        (dayName: "Saturday", shortName: "Sat", active: false),
+        (dayName: "Sunday", shortName: "Sun", active: false)]
     var alarmIsActivated: Bool
     var alarmSound: AudioClip
+     
     var alarmTitle: String
     var snooze = Snooze(snoozed: false, snoozeCounter: 0, originalAlarmTime: nil)
     
