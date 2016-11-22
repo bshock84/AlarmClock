@@ -58,7 +58,7 @@ class SSSAudioController {
         
     }
     
-    func prepareAlarmSound(audioClip: AudioClip) {
+    func prepareAlarmSound(audioClip: AudioClipsModel.AudioClip) {
         let audioFilePath = Bundle.main.path(forResource: audioClip.rawValue, ofType: "mp3")
         let audioFileURL = URL(fileURLWithPath: audioFilePath!)
         activateAudioSession()

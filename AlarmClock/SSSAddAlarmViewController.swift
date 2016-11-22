@@ -11,14 +11,15 @@ import UIKit
 
 
 
-class SSSAddAlarmViewController: UIViewController, AlarmWillEditDelegate {
+class SSSAddAlarmViewController: UIViewController {
 
     let alarmController = SSSAlarmController.sharedInstance
-    var alarmToEdit: Alarm?
+    var alarmToEdit: (alarm: Alarm?, alarmIndex: Int?)
     let setupAlarmViewController = SSSSetupAlarmViewController()
     
    
     @IBOutlet weak var timePickerOutlet: UIDatePicker!
+    @IBOutlet weak var containerViewOutlet: UIView!
     
     @IBAction func timePickerDidChange(_ sender: AnyObject) {
         print(timePickerOutlet.date)
@@ -31,7 +32,7 @@ class SSSAddAlarmViewController: UIViewController, AlarmWillEditDelegate {
         //setupAlarmViewController.editDelegate = self
         //print(alarmToEdit)
         
-        timePickerOutlet.setDate((alarmToEdit?.alarmTime)!, animated: true)
+        timePickerOutlet.setDate((alarmToEdit.alarm?.alarmTime)!, animated: true)
         
 
         //print(alarmToEdit)
@@ -53,10 +54,11 @@ class SSSAddAlarmViewController: UIViewController, AlarmWillEditDelegate {
     }
     
 
-    func pushAlarmToViewController(alarm: Alarm) {
-        print("deleagate has been called")
-        alarmToEdit = alarm
-    }
+//    func pushAlarmToViewController(alarm: Alarm) {
+//        print("deleagate has been called")
+//        alarmToEdit.alarm = alarm
+//    }
+    
     
 //    func numberOfSections(in tableView: UITableView) -> Int {
 //        return 1

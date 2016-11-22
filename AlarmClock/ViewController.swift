@@ -43,12 +43,13 @@ import AVFoundation
 class ViewController: UIViewController, TimeKeeperDelegate {
     
     
+    @IBOutlet weak var alarmButton: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
     
     let alarmAudioController = SSSAudioController()
-    let audioClip = AudioClip.FogHorn
+    //let audioClip = AudioClip.FogHorn
     let clock = SSSClock()
     let notifCenter = NotificationCenter.default
     

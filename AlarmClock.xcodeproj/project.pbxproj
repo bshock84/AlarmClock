@@ -39,6 +39,7 @@
 		EB402E091D9DBC1600B7C8AE /* SSSAddAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB402E081D9DBC1600B7C8AE /* SSSAddAlarmViewController.swift */; };
 		EB40C8BA1D9604BD00AE6DDF /* Stinkin Boop Font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB40C8B91D9602FF00AE6DDF /* Stinkin Boop Font.ttf */; };
 		EB40C8BC1D96062400AE6DDF /* RACE1 Brannt Chiseled NCV.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB40C8BB1D9605EA00AE6DDF /* RACE1 Brannt Chiseled NCV.ttf */; };
+		EB917D771DE3BA5D0096199F /* SSSAudioClipSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB917D761DE3BA5D0096199F /* SSSAudioClipSelectionTableViewController.swift */; };
 		EBBA3C8B1DDD9DAF00D18EFD /* SSSAlarmMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA3C8A1DDD9DAF00D18EFD /* SSSAlarmMenuTableViewController.swift */; };
 		EBBA3C8D1DDDB61300D18EFD /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA3C8C1DDDB61300D18EFD /* DateExtension.swift */; };
 		EBEE6A401DDF0A9A0004E35D /* SelectAudioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEE6A3F1DDF0A9A0004E35D /* SelectAudioTableViewCell.swift */; };
@@ -79,6 +80,7 @@
 		EB402E081D9DBC1600B7C8AE /* SSSAddAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSSAddAlarmViewController.swift; sourceTree = "<group>"; };
 		EB40C8B91D9602FF00AE6DDF /* Stinkin Boop Font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stinkin Boop Font.ttf"; sourceTree = "<group>"; };
 		EB40C8BB1D9605EA00AE6DDF /* RACE1 Brannt Chiseled NCV.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RACE1 Brannt Chiseled NCV.ttf"; sourceTree = "<group>"; };
+		EB917D761DE3BA5D0096199F /* SSSAudioClipSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSSAudioClipSelectionTableViewController.swift; sourceTree = "<group>"; };
 		EBBA3C8A1DDD9DAF00D18EFD /* SSSAlarmMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSSAlarmMenuTableViewController.swift; sourceTree = "<group>"; };
 		EBBA3C8C1DDDB61300D18EFD /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		EBEE6A3F1DDF0A9A0004E35D /* SelectAudioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectAudioTableViewCell.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				EB402E081D9DBC1600B7C8AE /* SSSAddAlarmViewController.swift */,
 				EB33DD1F1D9F07190000CDAB /* SSSAlarmController.swift */,
 				EB3866651D90A4D800DE4D9E /* SSSAudioController.swift */,
+				EB917D761DE3BA5D0096199F /* SSSAudioClipSelectionTableViewController.swift */,
 				EBBA3C8A1DDD9DAF00D18EFD /* SSSAlarmMenuTableViewController.swift */,
 				EB3866601D90A1C300DE4D9E /* AudioClip.swift */,
 				EB3BED491D93555400AB8480 /* SSSClock.swift */,
@@ -270,6 +273,7 @@
 				EB3866521D906D1100DE4D9E /* AlarmClock.xcdatamodeld in Sources */,
 				EB3866661D90A4D800DE4D9E /* SSSAudioController.swift in Sources */,
 				EB34E6B91DBCBCE0004A6609 /* alarmErrors.swift in Sources */,
+				EB917D771DE3BA5D0096199F /* SSSAudioClipSelectionTableViewController.swift in Sources */,
 				EB34E6BF1DBF49DD004A6609 /* AlarmTableViewController.swift in Sources */,
 				EB38664A1D906D1100DE4D9E /* AppDelegate.swift in Sources */,
 				EBBA3C8B1DDD9DAF00D18EFD /* SSSAlarmMenuTableViewController.swift in Sources */,

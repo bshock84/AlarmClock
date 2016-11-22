@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3wj-8q-IHT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -45,6 +46,14 @@
                                 <color key="textColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="piO-rj-gFu">
+                                <connections>
+                                    <segue destination="3wj-8q-IHT" kind="show" id="i0B-VT-EFc">
+                                        <segue key="commit" inheritsFrom="parent" id="AB9-rc-mgb"/>
+                                        <segue key="preview" inheritsFrom="commit" id="ZSM-Qb-Dsx"/>
+                                    </segue>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -57,12 +66,16 @@
                             <constraint firstItem="Uzn-mn-FZ3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-44" id="LgZ-Zj-1TP">
                                 <variation key="heightClass=compact" constant="-15"/>
                             </constraint>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="piO-rj-gFu" secondAttribute="bottom" constant="257" id="M2i-T2-d0g"/>
                             <constraint firstItem="i04-6d-umM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="ORC-VA-aiu"/>
                             <constraint firstItem="Uzn-mn-FZ3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="Pg5-Ix-hp9"/>
+                            <constraint firstItem="piO-rj-gFu" firstAttribute="top" secondItem="Uzn-mn-FZ3" secondAttribute="bottom" constant="34" id="QCe-Wg-ABi"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KPm-EC-yUI" secondAttribute="bottom" constant="-5" id="Xvb-ci-HJ2"/>
+                            <constraint firstItem="piO-rj-gFu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="324" id="dDR-Xf-Sbe"/>
                             <constraint firstItem="Uzn-mn-FZ3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="1" id="iQi-sU-iNt">
                                 <variation key="widthClass=compact" constant="-9"/>
                             </constraint>
+                            <constraint firstAttribute="trailing" secondItem="piO-rj-gFu" secondAttribute="trailing" constant="5" id="jqG-j6-wsN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Uzn-mn-FZ3" secondAttribute="trailing" constant="-1" id="oJ7-60-ULt">
                                 <variation key="widthClass=compact" constant="19"/>
                             </constraint>
@@ -77,6 +90,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="alarmButton" destination="piO-rj-gFu" id="MsB-d4-XRy"/>
                         <outlet property="backgroundImageView" destination="KPm-EC-yUI" id="l0D-ny-UXi"/>
                         <outlet property="dateLabel" destination="i04-6d-umM" id="4a3-mz-Oxj"/>
                         <outlet property="timeLabel" destination="Uzn-mn-FZ3" id="V8Y-J3-9YF"/>
@@ -84,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="259.4202898550725" y="40.760869565217398"/>
+            <point key="canvasLocation" x="92" y="-227"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="f78-5R-Poa">
@@ -314,6 +328,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="BQu-v3-ZO5"/>
                     <connections>
+                        <outlet property="containerViewOutlet" destination="zI3-fO-6zo" id="cBP-j0-P43"/>
                         <outlet property="timePickerOutlet" destination="dgx-mp-1mf" id="QG1-G1-a10"/>
                     </connections>
                 </viewController>
@@ -369,6 +384,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="7P2-Ag-ams" kind="presentation" identifier="audioClipSelectionSegue" id="IKw-yP-a6Y"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="selectRepeatCell" id="cQk-gd-zsk">
                                         <rect key="frame" x="0.0" y="64" width="375" height="64"/>
@@ -400,6 +418,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="uyy-5l-TBy" kind="presentation" id="lPo-Hs-HP0"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -419,9 +440,77 @@
             </objects>
             <point key="canvasLocation" x="3424.8000000000002" y="-508.69565217391306"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="w7d-3w-laC">
+            <objects>
+                <tableViewController id="uyy-5l-TBy" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pmA-sh-K1O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="g3A-WS-EG1">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g3A-WS-EG1" id="KCf-Sk-Fu0">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="uyy-5l-TBy" id="kP1-Bl-NIN"/>
+                            <outlet property="delegate" destination="uyy-5l-TBy" id="tfv-Js-dTh"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UhO-L3-ErU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4220" y="-184"/>
+        </scene>
+        <!--Audio Clip Selection Table View Controller-->
+        <scene sceneID="dyR-3q-XPV">
+            <objects>
+                <tableViewController id="7P2-Ag-ams" customClass="SSSAudioClipSelectionTableViewController" customModule="AlarmClock" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="63" sectionFooterHeight="28" id="x07-Ka-yMD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="audioClipCell" textLabel="bUV-xd-frQ" style="IBUITableViewCellStyleDefault" id="Aqy-SG-52g">
+                                <rect key="frame" x="0.0" y="63" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Aqy-SG-52g" id="1m3-rp-EZE">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bUV-xd-frQ">
+                                            <frame key="frameInset" minX="15" width="345" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7P2-Ag-ams" id="yYp-Sc-cns"/>
+                            <outlet property="delegate" destination="7P2-Ag-ams" id="DcG-Za-TWK"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x4j-3u-MR3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4220" y="-835.23238380809596"/>
+        </scene>
     </scenes>
     <resources>
         <image name="addAlarmButton3" width="241" height="77"/>
         <image name="clockRadioPortrait" width="782" height="1336"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="i0B-VT-EFc"/>
+    </inferredMetricsTieBreakers>
 </document>

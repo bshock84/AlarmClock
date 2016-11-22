@@ -8,16 +8,31 @@
 
 import Foundation
 
-
-enum AudioClip: String {
-    case FogHorn = "foghorn"
-    case RailroadCrosing = "railroadcrossing"
-    case BuzzBuzz = "buzzbuzz"
-    case WarTime = "wartime"
-    case BombsAway = "bombsaway"
-    case FireAlarm = "firealarm"
-    case TornadoAlly = "tornadoally"
-    case MissileCommand = "missilecommand"
-    case OldTimeBuzzer = "oldtimebuzzer"
-    case Aliens = "aliens"
+struct AudioClipsModel {
+    
+    enum AudioClip: String {
+        case FogHorn = "foghorn"
+        case RailroadCrosing = "railroadcrossing"
+        case BuzzBuzz = "buzzbuzz"
+        case WarTime = "wartime"
+        case BombsAway = "bombsaway"
+        case FireAlarm = "firealarm"
+        case TornadoAlly = "tornadoally"
+        case MissileCommand = "missilecommand"
+        case OldTimeBuzzer = "oldtimebuzzer"
+        case Aliens = "aliens"
+    }
+    
+    let audioClipArray: [AudioClip] = [
+        .FogHorn,
+        .RailroadCrosing,
+        .BuzzBuzz,
+        .WarTime,
+        .BombsAway,
+        .FireAlarm,
+        .TornadoAlly,
+        .MissileCommand,
+        .OldTimeBuzzer,
+        .Aliens
+    ]
 }

@@ -24,7 +24,7 @@ class SSSSetupAlarmViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var tableViewOutlet: UITableView!
     let alarmController = SSSAlarmController.sharedInstance
     var editDelegate: AlarmWillEditDelegate?
-    var alarmToEdit: Alarm?
+    var alarmToEdit: (alarm: Alarm?, alarmIndex: Int?)
     
     @IBAction func editAlarmRow(_ sender: AnyObject) {
         if tableViewOutlet.isEditing {
@@ -73,13 +73,12 @@ class SSSSetupAlarmViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        print("I touched the accessory button for index \(indexPath.row)")
-        
         guard let alarmToEdit = alarmController.editAlarm(alarmID: indexPath.row) else {
                 print(AlarmErrors.alarmNotFound.rawValue)
                 return
         }
-        self.alarmToEdit = alarmToEdit
+        self.alarmToEdit.alarm = alarmToEdit
+        self.alarmToEdit.alarmIndex = indexPath.row
         performSegue(withIdentifier: "editAlarmSeque", sender: self)
     }
     

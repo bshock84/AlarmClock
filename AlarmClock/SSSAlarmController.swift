@@ -40,7 +40,7 @@ struct Alarm {
         (dayName: "Saturday", shortName: "Sat", active: false),
         (dayName: "Sunday", shortName: "Sun", active: false)]
     var alarmIsActivated: Bool
-    var alarmSound: AudioClip
+    var alarmSound: AudioClipsModel.AudioClip
      
     var alarmTitle: String
     var snooze = Snooze(snoozed: false, snoozeCounter: 0, originalAlarmTime: nil)
@@ -54,7 +54,7 @@ struct Alarm {
         
     }
     
-    init(alarmTime: Date, alarmWillRepeat: Bool, alarmIsActivated: Bool, alarmSound: AudioClip, alarmTitle: String) {
+    init(alarmTime: Date, alarmWillRepeat: Bool, alarmIsActivated: Bool, alarmSound: AudioClipsModel.AudioClip, alarmTitle: String) {
         self.alarmTime = alarmTime
         self.alarmWillRepeat = alarmWillRepeat
         self.alarmSound = alarmSound

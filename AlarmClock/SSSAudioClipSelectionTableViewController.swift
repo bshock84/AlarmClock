@@ -1,26 +1,22 @@
 //
-//  SSSAlarmMenuTableViewController.swift
+//  SSSAudioClipSelectionTableViewController.swift
 //  AlarmClock
 //
-//  Created by Ben Shockley on 11/17/16.
+//  Created by Ben Shockley on 11/21/16.
 //  Copyright © 2016 Ben Shockley. All rights reserved.
 //
 
 import UIKit
 
-class SSSAlarmMenuTableViewController: UITableViewController {
-    
-    
-    @IBOutlet weak var soundDetailLabel: UILabel!
-    @IBOutlet var menuTableOutlet: UITableView!
-    @IBOutlet weak var repeatDetailLabel: UILabel!
-    
-    let alarmController = SSSAlarmController.sharedInstance
-    var alarmToEdit: (alarm: Alarm?, alarmIndex: Int?)
+class SSSAudioClipSelectionTableViewController: UITableViewController {
 
+    let audioClipsModel = AudioClipsModel()
+    var alarmToEdit: (alarm: Alarm?, alarmIndex: Int?)
+    let alarmController = SSSAlarmController.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupMenuNavigation()
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -32,49 +28,34 @@ class SSSAlarmMenuTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    // MARK: - Table view data source
+
     
-    func setupMenuNavigation() {
-        soundDetailLabel.text = alarmController.existingAlarms[alarmToEdit.alarmIndex!].alarmSound.rawValue
-        
-        for day in alarmController.existingAlarms[alarmToEdit.alarmIndex!].alarmDaysOfWeeksToRepeat {
-            if day.active == true {
-                repeatDetailLabel.text!.append(" \(day.shortName) ")
-            }
-        }
-        
-        if repeatDetailLabel.text! == "" {
-            repeatDetailLabel.text = "Never"
-        }
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return audioClipsModel.audioClipArray.count
+    }
+
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "audioClipCell", for: indexPath)
+        let audioClip = audioClipsModel.audioClipArray[indexPath.row]
+        cell.textLabel?.text = audioClip.rawValue
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-           
-        }
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "audioClipSelectionSegue" {
-            let destinationVC = segue.destination as! SSSAudioClipSelectionTableViewController
-            destinationVC.alarmToEdit = alarmToEdit
-        }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        print("VIEW WILL APPEAR NIGGA")
-        print(alarmController.existingAlarms[alarmToEdit.alarmIndex!].alarmSound.rawValue)
-        menuTableOutlet.reloadData()
-        setupMenuNavigation()
+        let audioClip = audioClipsModel.audioClipArray[indexPath.row]
+        alarmController.existingAlarms[alarmToEdit.alarmIndex!].alarmSound = AudioClipsModel.AudioClip(rawValue: audioClip.rawValue)!
+        dismiss(animated: true, completion: nil)
         
     }
     
-    
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        
-//        //tableView.estimatedRowHeight = 30
-//        return UITableViewAutomaticDimension
-//    }
-
-    // MARK: - Table view data source
 
     /*
     // Override to support conditional editing of the table view.
