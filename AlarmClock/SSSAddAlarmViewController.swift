@@ -11,7 +11,7 @@ import UIKit
 
 
 
-class SSSAddAlarmViewController: UIViewController {
+class SSSAddAlarmViewController: UIViewController, WillPushDataDelegate {
 
     let alarmController = SSSAlarmController.sharedInstance
     var alarmToEdit: (alarm: Alarm?, alarmIndex: Int?)
@@ -29,22 +29,17 @@ class SSSAddAlarmViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //setupAlarmViewController.editDelegate = self
-        //print(alarmToEdit)
         
         timePickerOutlet.setDate((alarmToEdit.alarm?.alarmTime)!, animated: true)
         
 
-        //print(alarmToEdit)
-        
-        // Do any additional setup after loading the view.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "alarmMenuSegue" {
             let embeddedVC = segue.destination as! SSSAlarmMenuTableViewController
             embeddedVC.alarmToEdit = self.alarmToEdit
-            //embeddedVC.view.translatesAutoresizingMaskIntoConstraints = false
+            embeddedVC.willPushDataDelegate = self
         }
     }
 
@@ -53,39 +48,9 @@ class SSSAddAlarmViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-//    func pushAlarmToViewController(alarm: Alarm) {
-//        print("deleagate has been called")
-//        alarmToEdit.alarm = alarm
-//    }
-    
-    
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
-    
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        
-//        //Only 2 rows are needed here for the options that are being used.
-//        return 2
-//    }
-    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cellIdentifier = "AlarmEditFunctions"
-//        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-//       // let firstCell = AlarmEditingFuctions(
-//        
-//       // return cell
-//    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func pushData<T>(data: T) {
+        alarmToEdit = data as! (alarm: Alarm?, alarmIndex: Int?)
     }
-    */
+    
 
 }

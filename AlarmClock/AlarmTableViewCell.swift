@@ -44,7 +44,6 @@ class AlarmTableViewCell: UITableViewCell {
         
         //let mainViewController = SSSSetupAlarmViewController()
         //sharedAlarmController = mainViewController.alarmController
-        print("awake from nib is being run now")
         
     }
     

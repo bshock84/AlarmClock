@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SSSAlarmMenuTableViewController: UITableViewController {
+class SSSAlarmMenuTableViewController: UITableViewController, WillPushDataDelegate {
     
     
     @IBOutlet weak var soundDetailLabel: UILabel!
@@ -17,15 +17,13 @@ class SSSAlarmMenuTableViewController: UITableViewController {
     
     let alarmController = SSSAlarmController.sharedInstance
     var alarmToEdit: (alarm: Alarm?, alarmIndex: Int?)
+    var willPushDataDelegate: WillPushDataDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        
         setupMenuNavigation()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,9 +32,9 @@ class SSSAlarmMenuTableViewController: UITableViewController {
     }
     
     func setupMenuNavigation() {
-        soundDetailLabel.text = alarmController.existingAlarms[alarmToEdit.alarmIndex!].alarmSound.rawValue
+        soundDetailLabel.text = alarmToEdit.alarm!.alarmSound.rawValue
         
-        for day in alarmController.existingAlarms[alarmToEdit.alarmIndex!].alarmDaysOfWeeksToRepeat {
+        for day in (alarmToEdit.alarm?.alarmDaysOfWeeksToRepeat)! {
             if day.active == true {
                 repeatDetailLabel.text!.append(" \(day.shortName) ")
             }
@@ -56,69 +54,18 @@ class SSSAlarmMenuTableViewController: UITableViewController {
         if segue.identifier == "audioClipSelectionSegue" {
             let destinationVC = segue.destination as! SSSAudioClipSelectionTableViewController
             destinationVC.alarmToEdit = alarmToEdit
+            destinationVC.willPushDataDelegate = self
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        print("VIEW WILL APPEAR NIGGA")
-        print(alarmController.existingAlarms[alarmToEdit.alarmIndex!].alarmSound.rawValue)
-        menuTableOutlet.reloadData()
+    
+    func pushData<T>(data: T) {
+        alarmToEdit = data as! (alarm: Alarm?, alarmIndex: Int?)
         setupMenuNavigation()
-        
+        menuTableOutlet.reloadData()
+        willPushDataDelegate?.pushData(data: self.alarmToEdit)
     }
     
     
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        
-//        //tableView.estimatedRowHeight = 30
-//        return UITableViewAutomaticDimension
-//    }
-
-    // MARK: - Table view data source
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
