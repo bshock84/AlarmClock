@@ -419,7 +419,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <segue destination="uyy-5l-TBy" kind="presentation" id="lPo-Hs-HP0"/>
+                                            <segue destination="uyy-5l-TBy" kind="presentation" identifier="selectRepeatDaysSegue" id="lPo-Hs-HP0"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -440,21 +440,48 @@
             </objects>
             <point key="canvasLocation" x="3424.8000000000002" y="-508.69565217391306"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Select Repeat Days Table View Controller-->
         <scene sceneID="w7d-3w-laC">
             <objects>
-                <tableViewController id="uyy-5l-TBy" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pmA-sh-K1O">
+                <tableViewController id="uyy-5l-TBy" customClass="SSSSelectRepeatDaysTableViewController" customModule="AlarmClock" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pmA-sh-K1O">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="9Mj-Rf-hOu">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Select Days To Repeat" id="fX6-RK-t0C">
+                                    <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="i4L-eS-3HV">
+                                        <connections>
+                                            <action selector="navBarCancelButton:" destination="uyy-5l-TBy" id="cX6-OR-oaz"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem key="rightBarButtonItem" systemItem="done" id="wR3-dS-izP">
+                                        <connections>
+                                            <action selector="navBarDoneButton:" destination="uyy-5l-TBy" id="B7e-yg-hl2"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="g3A-WS-EG1">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="repeatDaysCell" textLabel="ln8-RQ-BvB" style="IBUITableViewCellStyleDefault" id="g3A-WS-EG1">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g3A-WS-EG1" id="KCf-Sk-Fu0">
                                     <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ln8-RQ-BvB">
+                                            <frame key="frameInset" minX="15" width="345" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -476,9 +503,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="1rx-0L-oFo">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Select An Alarm Sound" id="6rY-jg-QIc">
+                                    <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="rLy-8r-kQb">
+                                        <connections>
+                                            <action selector="navBarCancelButton:" destination="7P2-Ag-ams" id="k7b-8N-2JL"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem key="rightBarButtonItem" systemItem="done" id="bMh-nH-p25">
+                                        <connections>
+                                            <action selector="navBarDoneButton:" destination="7P2-Ag-ams" id="eah-zC-6Rp"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="audioClipCell" textLabel="bUV-xd-frQ" style="IBUITableViewCellStyleDefault" id="Aqy-SG-52g">
-                                <rect key="frame" x="0.0" y="63" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="107" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Aqy-SG-52g" id="1m3-rp-EZE">
                                     <frame key="frameInset" width="375" height="43"/>

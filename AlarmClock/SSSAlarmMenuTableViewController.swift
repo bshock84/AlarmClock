@@ -34,14 +34,19 @@ class SSSAlarmMenuTableViewController: UITableViewController, WillPushDataDelega
     func setupMenuNavigation() {
         soundDetailLabel.text = alarmToEdit.alarm!.alarmSound.rawValue
         
+        var numberOfActive = 0
+        var repeatedDays: String = ""
         for day in (alarmToEdit.alarm?.alarmDaysOfWeeksToRepeat)! {
             if day.active == true {
-                repeatDetailLabel.text!.append(" \(day.shortName) ")
+                numberOfActive += 1
+                repeatedDays.append(" \(day.shortName) ")
             }
         }
         
-        if repeatDetailLabel.text! == "" {
-            repeatDetailLabel.text = "Never"
+        switch numberOfActive {
+        case 7 : repeatDetailLabel.text = "Everyday"
+        case 0 : repeatDetailLabel.text = "Never"
+        default: repeatDetailLabel.text = repeatedDays
         }
     }
     
@@ -53,6 +58,11 @@ class SSSAlarmMenuTableViewController: UITableViewController, WillPushDataDelega
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "audioClipSelectionSegue" {
             let destinationVC = segue.destination as! SSSAudioClipSelectionTableViewController
+            destinationVC.alarmToEdit = alarmToEdit
+            destinationVC.willPushDataDelegate = self
+        }
+        if segue.identifier == "selectRepeatDaysSegue" {
+            let destinationVC = segue.destination as! SSSSelectRepeatDaysTableViewController
             destinationVC.alarmToEdit = alarmToEdit
             destinationVC.willPushDataDelegate = self
         }

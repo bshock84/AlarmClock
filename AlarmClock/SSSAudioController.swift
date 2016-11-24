@@ -13,7 +13,7 @@ import AVFoundation
 
 class SSSAudioController {
     
-    var audioPlayer = AVAudioPlayer()
+    var audioPlayer: AVAudioPlayer?
     let audioSession = AVAudioSession.sharedInstance()
 //    let audioClip: AudioClip
 //    
@@ -74,11 +74,17 @@ class SSSAudioController {
     }
     
     func playAlarm() {
-        audioPlayer.play()
+        if audioPlayer != nil {
+            audioPlayer!.play()
+        }
     }
     
     func stopAlarm() {
-        audioPlayer.stop()
+        if audioPlayer != nil {
+            if audioPlayer!.isPlaying {
+                audioPlayer!.stop()
+            }
+        }
     }
     
 }

@@ -16,8 +16,6 @@ class AlarmTableViewCell: UITableViewCell {
     @IBOutlet weak var alarmRepeatInfoLabel: UILabel!
     @IBOutlet weak var alarmActivatedSwitch: UISwitch!
     
-    
-    
     var alarmController = SSSAlarmController.sharedInstance
     
     @IBAction func alarmActivatedSwitchAction(_ sender: UISwitch) {
@@ -29,10 +27,6 @@ class AlarmTableViewCell: UITableViewCell {
             alarmController.existingAlarms[sender.tag].alarmIsActivated = true
             alarmController.activateAlarm(alarmIndex: sender.tag)
         }
-        
-        print("**********\n The alarm to be changed is \(alarmController.existingAlarms[sender.tag])")
-
-       
     }
     
    

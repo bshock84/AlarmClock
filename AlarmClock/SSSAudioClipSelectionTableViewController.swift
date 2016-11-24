@@ -14,9 +14,21 @@ class SSSAudioClipSelectionTableViewController: UITableViewController {
     var alarmToEdit: (alarm: Alarm?, alarmIndex: Int?)
     let alarmController = SSSAlarmController.sharedInstance
     var willPushDataDelegate: WillPushDataDelegate?
+    let audioController = SSSAudioController()
     
+    @IBAction func navBarCancelButton(_ sender: AnyObject) {
+        audioController.stopAlarm()
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func navBarDoneButton(_ sender: AnyObject) {
+        audioController.stopAlarm()
+        willPushDataDelegate?.pushData(data: alarmToEdit)
+        dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        audioController.activateAudioSession()
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,10 +52,10 @@ class SSSAudioClipSelectionTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        audioController.stopAlarm()
         alarmToEdit.alarm?.alarmSound = audioClipsModel.audioClipArray[indexPath.row]
-        willPushDataDelegate?.pushData(data: alarmToEdit)
-        dismiss(animated: true, completion: nil)
-        
+        audioController.prepareAlarmSound(audioClip: (alarmToEdit.alarm?.alarmSound)!)
+        audioController.playAlarm()
     }
 
 }

@@ -32,13 +32,13 @@ struct Alarm {
     var alarmTime: Date
     var alarmWillRepeat: Bool
     var alarmDaysOfWeeksToRepeat = [
-        (dayName: "Monday", shortName: "Mon", active: false),
-        (dayName: "Tuesday", shortName: "Tue", active: false),
-        (dayName: "Wednesday", shortName: "Wed", active: false),
-        (dayName: "Thursday", shortName: "Thu", active: false),
-        (dayName: "Friday", shortName: "Fri", active: false),
-        (dayName: "Saturday", shortName: "Sat", active: false),
-        (dayName: "Sunday", shortName: "Sun", active: false)]
+        (dayName: "Monday", shortName: "Mon", active: true),
+        (dayName: "Tuesday", shortName: "Tue", active: true),
+        (dayName: "Wednesday", shortName: "Wed", active: true),
+        (dayName: "Thursday", shortName: "Thu", active: true),
+        (dayName: "Friday", shortName: "Fri", active: true),
+        (dayName: "Saturday", shortName: "Sat", active: true),
+        (dayName: "Sunday", shortName: "Sun", active: true)]
     var alarmIsActivated: Bool
     var alarmSound: AudioClipsModel.AudioClip
      
