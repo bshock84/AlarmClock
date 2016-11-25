@@ -29,6 +29,7 @@ class SSSAudioClipSelectionTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         audioController.activateAudioSession()
+        self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
     }
 
     override func didReceiveMemoryWarning() {

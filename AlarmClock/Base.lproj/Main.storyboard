@@ -287,6 +287,9 @@
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="deleteAlarmButton:" destination="Faz-Q5-BDs" eventType="touchUpInside" id="MXn-bq-esh"/>
+                                </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="dgx-mp-1mf">
                                 <constraints>
@@ -330,9 +333,11 @@
                     <connections>
                         <outlet property="containerViewOutlet" destination="zI3-fO-6zo" id="cBP-j0-P43"/>
                         <outlet property="timePickerOutlet" destination="dgx-mp-1mf" id="QG1-G1-a10"/>
+                        <segue destination="pW7-5I-7UP" kind="unwind" identifier="unwindToSetupAlarmSegue" unwindAction="unwindToMenuWithSegue:" id="3o6-aA-IqN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BDr-Gg-Na7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="pW7-5I-7UP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2494.202898550725" y="-586.14130434782612"/>
         </scene>

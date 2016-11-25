@@ -26,6 +26,10 @@ class SSSSetupAlarmViewController: UIViewController, UITableViewDelegate, UITabl
     var editDelegate: AlarmWillEditDelegate?
     var alarmToEdit: (alarm: Alarm?, alarmIndex: Int?)
     
+    @IBAction func unwindToMenu(segue: UIStoryboardSegue) {
+        tableViewOutlet.reloadData()
+    }
+    
     @IBAction func editAlarmRow(_ sender: AnyObject) {
         if tableViewOutlet.isEditing {
             tableViewOutlet.setEditing(false, animated: true)

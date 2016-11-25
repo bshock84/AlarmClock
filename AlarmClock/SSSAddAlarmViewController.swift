@@ -21,6 +21,10 @@ class SSSAddAlarmViewController: UIViewController, WillPushDataDelegate {
     @IBOutlet weak var timePickerOutlet: UIDatePicker!
     @IBOutlet weak var containerViewOutlet: UIView!
     
+    @IBAction func deleteAlarmButton(_ sender: AnyObject) {
+        alarmController.deleteAlarm(alarm: alarmToEdit.alarmIndex!)
+        self.performSegue(withIdentifier: "unwindToSetupAlarmSegue", sender: self)
+    }
     @IBAction func timePickerDidChange(_ sender: AnyObject) {
         print(timePickerOutlet.date)
         print(DateFormatter.stringFromTime(time: timePickerOutlet.date))

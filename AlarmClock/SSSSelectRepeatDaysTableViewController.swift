@@ -14,11 +14,15 @@ class SSSSelectRepeatDaysTableViewController: UITableViewController {
     var willPushDataDelegate: WillPushDataDelegate?
     
     @IBAction func navBarCancelButton(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
     }
     @IBAction func navBarDoneButton(_ sender: AnyObject) {
+        willPushDataDelegate?.pushData(data: alarmToEdit)
+        dismiss(animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
 
     }
 
