@@ -22,6 +22,10 @@ class ViewController: UIViewController, TimeKeeperDelegate {
     let clock = SSSClock()
     let notifCenter = NotificationCenter.default
     
+    @IBAction func unwindToMainScreen(segue: UIStoryboardSegue){
+        
+    }
+    
     
 
     override func viewDidLoad() {

@@ -21,7 +21,6 @@ class SSSAlarmMenuTableViewController: UITableViewController, WillPushDataDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         
         setupMenuNavigation()
     }
@@ -74,6 +73,7 @@ class SSSAlarmMenuTableViewController: UITableViewController, WillPushDataDelega
         setupMenuNavigation()
         menuTableOutlet.reloadData()
         willPushDataDelegate?.pushData(data: self.alarmToEdit)
+        print("\n\ndelegate fired\n\n")
     }
     
     

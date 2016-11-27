@@ -30,6 +30,10 @@ class SSSSetupAlarmViewController: UIViewController, UITableViewDelegate, UITabl
         tableViewOutlet.reloadData()
     }
     
+    @IBAction func navBarBackButton(_ sender: AnyObject) {
+        performSegue(withIdentifier: "unwindToMainScreen", sender: self)
+    }
+    
     @IBAction func editAlarmRow(_ sender: AnyObject) {
         if tableViewOutlet.isEditing {
             tableViewOutlet.setEditing(false, animated: true)
@@ -38,10 +42,11 @@ class SSSSetupAlarmViewController: UIViewController, UITableViewDelegate, UITabl
             tableViewOutlet.setEditing(true, animated: true)
             tableViewOutlet.allowsMultipleSelection = false
             editButton.title = "Done"
-            
-            
         }
-        
+    }
+    @IBAction func addAlarmButton(_ sender: AnyObject) {
+        alarmToEdit = alarmController.createNewAlarm()
+        performSegue(withIdentifier: "editAlarmSeque", sender: self)
     }
     
     override func viewDidLoad() {
@@ -50,7 +55,6 @@ class SSSSetupAlarmViewController: UIViewController, UITableViewDelegate, UITabl
         super.viewDidLoad()
         //alarmController.test()
         tableViewOutlet.reloadData()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,11 +73,9 @@ class SSSSetupAlarmViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            print("I'm gonna delete you \(indexPath.row)")
             alarmController.deleteAlarm(alarm: indexPath.row)
             tableViewOutlet.reloadData()
         }
-        
     }
     
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
@@ -92,8 +94,6 @@ class SSSSetupAlarmViewController: UIViewController, UITableViewDelegate, UITabl
             editVC.alarmToEdit = alarmToEdit
         }
     }
-    
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "alarmCell"
@@ -116,16 +116,4 @@ class SSSSetupAlarmViewController: UIViewController, UITableViewDelegate, UITabl
         
         return cell
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

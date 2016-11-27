@@ -108,11 +108,11 @@ class SSSAlarmController {
     let CDManagedObject = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     
     
-    func createNewAlarm() -> Alarm {
+    func createNewAlarm() -> (alarm: Alarm?, alarmIndex: Int?) {
         let newAlarm = Alarm()
-        
-        
-        return newAlarm
+        let alarmIndex = existingAlarms.count
+        existingAlarms.append(newAlarm)
+        return (alarm: newAlarm, alarmIndex: alarmIndex)
     }
     
     func editAlarm(alarmID: Int) -> Alarm? {
