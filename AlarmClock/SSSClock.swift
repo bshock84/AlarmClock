@@ -38,8 +38,6 @@ class SSSClock: TimeKeeper {
     }
     
     @objc func tick() {
-        
-        // pulling the
         let systemTime = Date()
         let timeFormatter = DateFormatter()
         timeFormatter.locale = Locale(identifier: "en_US")
@@ -62,6 +60,7 @@ class SSSClock: TimeKeeper {
         }
         
         timeKeeperDelegate?.updateClockLabel(currentTime: currentTime, weekdayString: weekDayString)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "currentTime"), object: self, userInfo: ["time" : currentTime])
     }
     
 }

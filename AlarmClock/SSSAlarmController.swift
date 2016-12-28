@@ -32,13 +32,13 @@ struct Alarm {
     var alarmTime: Date
     var alarmWillRepeat: Bool
     var alarmDaysOfWeeksToRepeat = [
-        (dayName: "Monday", shortName: "Mon", active: true),
-        (dayName: "Tuesday", shortName: "Tue", active: true),
-        (dayName: "Wednesday", shortName: "Wed", active: true),
-        (dayName: "Thursday", shortName: "Thu", active: true),
-        (dayName: "Friday", shortName: "Fri", active: true),
-        (dayName: "Saturday", shortName: "Sat", active: true),
-        (dayName: "Sunday", shortName: "Sun", active: true)]
+        (dayName: "Monday", shortName: "Mon", active: false),
+        (dayName: "Tuesday", shortName: "Tue", active: false),
+        (dayName: "Wednesday", shortName: "Wed", active: false),
+        (dayName: "Thursday", shortName: "Thu", active: false),
+        (dayName: "Friday", shortName: "Fri", active: false),
+        (dayName: "Saturday", shortName: "Sat", active: false),
+        (dayName: "Sunday", shortName: "Sun", active: false)]
     var alarmIsActivated: Bool
     var alarmSound: AudioClipsModel.AudioClip
      
@@ -70,7 +70,10 @@ struct Alarm {
 class SSSAlarmController {
     
     static let sharedInstance = SSSAlarmController()
-    private init() {}
+    private init() {
+        NotificationCenter.default.addObserver(self, selector: #selector(SSSAlarmController.checkForAlarm(_:)), name: NSNotification.Name(rawValue: "currentTime"), object: nil)
+}
+    
     
     //TEST CASES **** DELETE THESE WHEN DONE WITH THEM
     let alarm4 = Alarm(
@@ -81,7 +84,7 @@ class SSSAlarmController {
             alarmTitle: "Alarm 1"
     )
     var existingAlarms: [Alarm] = [
-        Alarm() ,
+        Alarm(),
         Alarm(
             alarmTime: DateFormatter.timeFromString(time: "10:00 pm"),
             alarmWillRepeat: true,
@@ -148,7 +151,7 @@ class SSSAlarmController {
     }
     
     func deleteAlarm(alarm: Int) {
-        //check to make sure the index exists, delete if it does, otherwise print and error.
+        //check to make sure the index exists, delete if it does, otherwise print an error.
         if alarm <= existingAlarms.count {
             existingAlarms.remove(at: alarm)
         } else {
@@ -171,6 +174,32 @@ class SSSAlarmController {
     func retrieveAlarmsFromDatabase() {
 
     }
+    //MARK: add a check to make sure currentTime isn't nil
+    @objc func checkForAlarm(_ notification: NSNotification) {
+        guard let currentTimeString = notification.userInfo?["time"] as? String else {
+            print("There was no time attached to this notification")
+            return
+        }
+        print(currentTimeString)
+        let currentTime = DateFormatter.timeFromString(time: currentTimeString)
+        
+        for alarm in existingAlarms {
+            
+            if alarm.alarmIsActivated {
+                if DateFormatter.compareTimes(time1: alarm.alarmTime, time2: currentTime) {
+                    fireAlarm(alarmIndex: 0)
+                }
+            }
+        }
+        
+    }
+    
+    func fireAlarm(alarmIndex: Int) {
+        print("ALARM IS BEING FIRED")
+        
+    }
+    
+    
     
     //Private Functions
     
