@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB2E4D511E1A19800007B3B5 /* AlarmAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E4D501E1A19800007B3B5 /* AlarmAlertViewController.swift */; };
 		EB33DD201D9F07190000CDAB /* SSSAlarmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB33DD1F1D9F07190000CDAB /* SSSAlarmController.swift */; };
 		EB34E6B91DBCBCE0004A6609 /* alarmErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB34E6B81DBCBCE0004A6609 /* alarmErrors.swift */; };
 		EB34E6BB1DBF2E55004A6609 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB34E6BA1DBF2E55004A6609 /* AlarmTableViewCell.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB2E4D501E1A19800007B3B5 /* AlarmAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmAlertViewController.swift; sourceTree = "<group>"; };
 		EB33DD1F1D9F07190000CDAB /* SSSAlarmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSSAlarmController.swift; sourceTree = "<group>"; };
 		EB34E6B81DBCBCE0004A6609 /* alarmErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = alarmErrors.swift; sourceTree = "<group>"; };
 		EB34E6BA1DBF2E55004A6609 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				EB402E011D9DBA5D00B7C8AE /* Fonts */,
 				EB3866631D90A2FC00DE4D9E /* Assets.xcassets */,
 				EB5BE0EA1DF2625B000E6280 /* Alarms.plist */,
+				EB2E4D501E1A19800007B3B5 /* AlarmAlertViewController.swift */,
 			);
 			path = AlarmClock;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				EB3866611D90A1C300DE4D9E /* AudioClip.swift in Sources */,
 				EB33DD201D9F07190000CDAB /* SSSAlarmController.swift in Sources */,
 				EB3560541DE65858000CF438 /* SSSSelectRepeatDaysTableViewController.swift in Sources */,
+				EB2E4D511E1A19800007B3B5 /* AlarmAlertViewController.swift in Sources */,
 				EB402E071D9DBAF600B7C8AE /* SSSSettingsViewController.swift in Sources */,
 				EB917D791DE55BD40096199F /* Utilities.swift in Sources */,
 				EB402E091D9DBC1600B7C8AE /* SSSAddAlarmViewController.swift in Sources */,

@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 //Enums
 
@@ -29,6 +30,7 @@ struct Snooze {
 
 
 struct Alarm {
+    var alarmFired: Bool = false
     var alarmTime: Date
     var alarmWillRepeat: Bool
     var alarmDaysOfWeeksToRepeat = [
@@ -68,6 +70,7 @@ struct Alarm {
 // Classes
 
 class SSSAlarmController {
+    let audioController = SSSAudioController()
     
     static let sharedInstance = SSSAlarmController()
     private init() {
@@ -107,7 +110,6 @@ class SSSAlarmController {
     
     // END TEST CASES
     
-    let audioController = SSSAudioController()
     let CDManagedObject = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     
     
@@ -160,7 +162,7 @@ class SSSAlarmController {
     }
     
     func activateAlarm(alarmIndex: Int) {
-        audioController.prepareAlarmSound(audioClip: existingAlarms[alarmIndex].alarmSound)
+        
     }
     
     func deactivateAlarm(alarmIndex: Int) {
@@ -174,7 +176,7 @@ class SSSAlarmController {
     func retrieveAlarmsFromDatabase() {
 
     }
-    //MARK: add a check to make sure currentTime isn't nil
+    
     @objc func checkForAlarm(_ notification: NSNotification) {
         guard let currentTimeString = notification.userInfo?["time"] as? String else {
             print("There was no time attached to this notification")
@@ -183,11 +185,11 @@ class SSSAlarmController {
         print(currentTimeString)
         let currentTime = DateFormatter.timeFromString(time: currentTimeString)
         
-        for alarm in existingAlarms {
-            
+        
+        for (index, alarm) in existingAlarms.enumerated() {
             if alarm.alarmIsActivated {
                 if DateFormatter.compareTimes(time1: alarm.alarmTime, time2: currentTime) {
-                    fireAlarm(alarmIndex: 0)
+                    fireAlarm(alarmIndex: index)
                 }
             }
         }
@@ -195,8 +197,16 @@ class SSSAlarmController {
     }
     
     func fireAlarm(alarmIndex: Int) {
-        print("ALARM IS BEING FIRED")
-        
+        if !existingAlarms[alarmIndex].alarmFired {
+            audioController.prepareAlarmSound(audioClip: existingAlarms[alarmIndex].alarmSound)
+            audioController.playAlarm()
+            existingAlarms[alarmIndex].alarmFired = true
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "alarmHasBeenFired"), object: self, userInfo: ["alarmIndex" : alarmIndex])
+            
+            print("firing alarm")
+        } else if existingAlarms[alarmIndex].alarmFired {
+            print("Alarm is already firing")
+        }
     }
     
     

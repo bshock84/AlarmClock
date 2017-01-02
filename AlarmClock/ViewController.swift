@@ -18,6 +18,7 @@ class ViewController: UIViewController, TimeKeeperDelegate {
     @IBOutlet weak var dateLabel: UILabel!
     
     let alarmAudioController = SSSAudioController()
+    let alarmController = SSSAlarmController.sharedInstance
     //let audioClip = AudioClip.FogHorn
     let clock = SSSClock()
     let notifCenter = NotificationCenter.default
@@ -34,28 +35,23 @@ class ViewController: UIViewController, TimeKeeperDelegate {
         
         //clockLabel.font = UIFont.monospacedDigitSystemFont(ofSize: 50.0, weight: 2.0)
         
-        
-        
-        
         clock.timeKeeperDelegate = self
-        
         clock.startClock()
         
         
         notifCenter.addObserver(self, selector: #selector(suspendApp), name: Notification.Name.UIApplicationWillResignActive, object: nil)
-        //notifCenter.addObserver(self, selector: #selector(adjustOrientation), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
-        
-        
-        
-        
-       
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.alarmFired), name: NSNotification.Name(rawValue: "alarmHasBeenFired"), object: nil)
+    }
+    
+    func alarmFired() {
+        let alert: UIViewController = (storyboard?.instantiateViewController(withIdentifier: "AlarmAlertViewController"))!
+        present(alert, animated: true, completion: nil)
         
     }
     
     func suspendApp() {
         print("going to the background now")
         clock.stopClock()
-        
     }
     
     func adjustOrientation() {
