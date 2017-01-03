@@ -71,6 +71,7 @@ struct Alarm {
 
 class SSSAlarmController {
     let audioController = SSSAudioController()
+    var willPushDataDelegate: WillPushDataDelegate?
     
     static let sharedInstance = SSSAlarmController()
     private init() {
@@ -182,7 +183,6 @@ class SSSAlarmController {
             print("There was no time attached to this notification")
             return
         }
-        print(currentTimeString)
         let currentTime = DateFormatter.timeFromString(time: currentTimeString)
         
         
@@ -197,13 +197,28 @@ class SSSAlarmController {
     }
     
     func fireAlarm(alarmIndex: Int) {
+        let alarmInfo: (title: String, time: String)
+        alarmInfo.title = existingAlarms[alarmIndex].alarmTitle
+        alarmInfo.time = DateFormatter.stringFromTime(time: existingAlarms[alarmIndex].alarmTime)
+        
         if !existingAlarms[alarmIndex].alarmFired {
+            //Load audio file and play it
+            
             audioController.prepareAlarmSound(audioClip: existingAlarms[alarmIndex].alarmSound)
             audioController.playAlarm()
-            existingAlarms[alarmIndex].alarmFired = true
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "alarmHasBeenFired"), object: self, userInfo: ["alarmIndex" : alarmIndex])
             
-            print("firing alarm")
+            existingAlarms[alarmIndex].alarmFired = true
+            
+            //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "alarmHasBeenFired"), object: self, userInfo: ["alarmIndex" : alarmIndex])
+            
+            
+            let rootViewController = UIApplication.shared.keyWindow?.rootViewController
+            let visibleVC = getVisibleViewController(rootViewController)
+            let alarmAlertView: UIViewController = (rootViewController?.storyboard?.instantiateViewController(withIdentifier: "AlarmAlertViewController"))!
+            
+            visibleVC?.show(alarmAlertView, sender: visibleVC)
+            willPushDataDelegate?.pushData(data: alarmInfo)
+            
         } else if existingAlarms[alarmIndex].alarmFired {
             print("Alarm is already firing")
         }
@@ -211,7 +226,38 @@ class SSSAlarmController {
     
     
     
+    
+    
     //Private Functions
+    
+    private func getVisibleViewController(_ rootViewController: UIViewController?) -> UIViewController? {
+        // this function is courtesy of user ProgrammierTier on stackoverflow.com
+        
+        
+        var rootVC = rootViewController
+        if rootVC == nil {
+            rootVC = UIApplication.shared.keyWindow?.rootViewController
+        }
+        
+        if rootVC?.presentedViewController == nil {
+            return rootVC
+        }
+        
+        if let presented = rootVC?.presentedViewController {
+            if presented.isKind(of: UINavigationController.self) {
+                let navigationController = presented as! UINavigationController
+                return navigationController.viewControllers.last!
+            }
+            
+            if presented.isKind(of: UITabBarController.self) {
+                let tabBarController = presented as! UITabBarController
+                return tabBarController.selectedViewController!
+            }
+            
+            return getVisibleViewController(presented)
+        }
+        return nil
+    }
     
 //    private func getAlarmID() -> Int{
 //        // Creates a unique ID Number for the alarm being created, so that it's easy to keep track of this particular alarm.

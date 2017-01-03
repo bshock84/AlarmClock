@@ -121,12 +121,18 @@
                                 <state key="normal" title="SNOOZE">
                                     <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="snoozeButton:" destination="m4I-vF-ZE6" eventType="touchUpInside" id="LDe-wA-9Hv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AvC-Uc-wVa">
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="35"/>
                                 <state key="normal" title="STOP">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="stopButton:" destination="m4I-vF-ZE6" eventType="touchUpInside" id="Z9Z-tl-tGd"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:00 PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEh-cC-zA6">
                                 <constraints>
@@ -166,6 +172,10 @@
                             <constraint firstItem="FMX-LA-VzB" firstAttribute="top" relation="greaterThanOrEqual" secondItem="UEh-cC-zA6" secondAttribute="bottom" constant="25" id="owF-8g-BYV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="alarmTimeLabel" destination="UEh-cC-zA6" id="nil-eY-rYi"/>
+                        <outlet property="alarmTitleLabel" destination="Jw3-tF-Qq3" id="inw-Vh-6CM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kGt-B7-AXs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

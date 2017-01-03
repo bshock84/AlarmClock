@@ -127,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				EB3866691D92646E00DE4D9E /* AlarmSounds */,
+				EB2E4D501E1A19800007B3B5 /* AlarmAlertViewController.swift */,
 				EB3866491D906D1100DE4D9E /* AppDelegate.swift */,
 				EB34E6BE1DBF49DD004A6609 /* AlarmTableViewController.swift */,
 				EB34E6BA1DBF2E55004A6609 /* AlarmTableViewCell.swift */,
@@ -153,7 +154,6 @@
 				EB402E011D9DBA5D00B7C8AE /* Fonts */,
 				EB3866631D90A2FC00DE4D9E /* Assets.xcassets */,
 				EB5BE0EA1DF2625B000E6280 /* Alarms.plist */,
-				EB2E4D501E1A19800007B3B5 /* AlarmAlertViewController.swift */,
 			);
 			path = AlarmClock;
 			sourceTree = "<group>";

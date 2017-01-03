@@ -31,23 +31,14 @@ class ViewController: UIViewController, TimeKeeperDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        //clockLabel.font = UIFont.monospacedDigitSystemFont(ofSize: 50.0, weight: 2.0)
         
         clock.timeKeeperDelegate = self
         clock.startClock()
         
-        
         notifCenter.addObserver(self, selector: #selector(suspendApp), name: Notification.Name.UIApplicationWillResignActive, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.alarmFired), name: NSNotification.Name(rawValue: "alarmHasBeenFired"), object: nil)
     }
     
-    func alarmFired() {
-        let alert: UIViewController = (storyboard?.instantiateViewController(withIdentifier: "AlarmAlertViewController"))!
-        present(alert, animated: true, completion: nil)
-        
-    }
+
     
     func suspendApp() {
         print("going to the background now")

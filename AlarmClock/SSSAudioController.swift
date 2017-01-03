@@ -75,6 +75,7 @@ class SSSAudioController {
     
     func playAlarm() {
         if audioPlayer != nil {
+            audioPlayer?.numberOfLoops = 10
             audioPlayer!.play()
         }
     }

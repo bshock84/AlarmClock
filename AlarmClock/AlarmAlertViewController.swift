@@ -8,12 +8,23 @@
 
 import UIKit
 
-class AlarmAlertViewController: UIViewController {
+class AlarmAlertViewController: UIViewController, WillPushDataDelegate {
+    @IBOutlet weak var alarmTitleLabel: UILabel!
+    @IBOutlet weak var alarmTimeLabel: UILabel!
+    
+    let alarmController = SSSAlarmController.sharedInstance
 
+    @IBAction func snoozeButton(_ sender: AnyObject) {
+    }
+    
+    @IBAction func stopButton(_ sender: AnyObject) {
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        alarmController.willPushDataDelegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +32,11 @@ class AlarmAlertViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func pushData<T>(data: T) {
+        let alarmInfo = data as! (title: String, time: String)
+        alarmTitleLabel.text = alarmInfo.title
+        alarmTimeLabel.text = alarmInfo.time        
+    }
     /*
     // MARK: - Navigation
 
