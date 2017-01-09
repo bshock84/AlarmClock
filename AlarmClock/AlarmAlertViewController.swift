@@ -13,11 +13,17 @@ class AlarmAlertViewController: UIViewController, WillPushDataDelegate {
     @IBOutlet weak var alarmTimeLabel: UILabel!
     
     let alarmController = SSSAlarmController.sharedInstance
+    
+    var alarmIndex: Int? = nil
 
     @IBAction func snoozeButton(_ sender: AnyObject) {
+        alarmController.snoozeAlarm(alarmIndex: alarmIndex!)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func stopButton(_ sender: AnyObject) {
+        alarmController.deactivateAlarm(alarmIndex: alarmIndex!)
+        dismiss(animated: true, completion: nil)
     }
     
     
@@ -33,9 +39,11 @@ class AlarmAlertViewController: UIViewController, WillPushDataDelegate {
     }
     
     func pushData<T>(data: T) {
-        let alarmInfo = data as! (title: String, time: String)
+        let alarmInfo = data as! (title: String, time: String, index: Int)
         alarmTitleLabel.text = alarmInfo.title
-        alarmTimeLabel.text = alarmInfo.time        
+        alarmTimeLabel.text = alarmInfo.time
+        alarmIndex = alarmInfo.index
+        
     }
     /*
     // MARK: - Navigation

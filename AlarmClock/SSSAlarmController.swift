@@ -25,7 +25,7 @@ enum AlarmEditingFuctions: String {
 struct Snooze {
     var snoozed: Bool
     var snoozeCounter: Int
-    var originalAlarmTime: String?
+    var originalAlarmTime: Date?
 }
 
 
@@ -131,35 +131,51 @@ class SSSAlarmController {
         }
     }
     
-    func snoozeAlarm(alarmID: Int) {
+    func snoozeAlarm(alarmIndex: Int) {
         //load the currently saved alarms from the database.
         retrieveAlarmsFromDatabase()
         
         //if the snooze button has not been pressed before, stop the alarm, save the original alarm time to the snooze struct, add 9 minutes to the alarm time, increment snoozeCounter, and set snooze to true.
-//        if existingAlarms[alarmID].snooze.snoozed == false {
-//            audioController.stopAlarm()
-//            existingAlarms[alarmID].snooze.originalAlarmTime = existingAlarms[alarmID].alarmTime
-//            existingAlarms[alarmID].alarmTime += "9"
-//            existingAlarms[alarmID].snooze.snoozeCounter += 1
-//            existingAlarms[alarmID].snooze.snoozed = true
-//            activateAlarm(alarmIndex: alarmID)
-//        } else {
-//            audioController.stopAlarm()
-//            existingAlarms[alarmID].alarmTime += "9"
-//            existingAlarms[alarmID].snooze.snoozeCounter += 1
-//            activateAlarm(alarmIndex: alarmID)
-//        }
+        if existingAlarms[alarmIndex].snooze.snoozed == false {
+            audioController.stopAlarm()
+            existingAlarms[alarmIndex].snooze.originalAlarmTime = existingAlarms[alarmIndex].alarmTime
+            
+            let alarmTime = existingAlarms[alarmIndex].alarmTime
+            existingAlarms[alarmIndex].alarmTime = alarmTime.addingTimeInterval(9.0 * 60.0)
+            
+            existingAlarms[alarmIndex].snooze.snoozeCounter += 1
+            existingAlarms[alarmIndex].snooze.snoozed = true
+            existingAlarms[alarmIndex].alarmIsActivated = true
+            existingAlarms[alarmIndex].alarmFired = false
+            
+            print(existingAlarms[alarmIndex])
+        } else {
+            audioController.stopAlarm()
+            let alarmTime = existingAlarms[alarmIndex].alarmTime
+            existingAlarms[alarmIndex].alarmTime = alarmTime.addingTimeInterval(9.0 * 60.0)
+            
+            existingAlarms[alarmIndex].snooze.snoozeCounter += 1
+            existingAlarms[alarmIndex].alarmIsActivated = true
+            existingAlarms[alarmIndex].alarmFired = false
+            
+            print(existingAlarms[alarmIndex])
+        }
         
         saveAlarmsToDatabase()
     }
     
     func deleteAlarm(alarm: Int) {
+        
+        retrieveAlarmsFromDatabase()
+        
         //check to make sure the index exists, delete if it does, otherwise print an error.
         if alarm <= existingAlarms.count {
             existingAlarms.remove(at: alarm)
         } else {
             print(AlarmErrors.alarmNotFound.rawValue)
         }
+        
+        saveAlarmsToDatabase()
     }
     
     func activateAlarm(alarmIndex: Int) {
@@ -168,6 +184,26 @@ class SSSAlarmController {
     
     func deactivateAlarm(alarmIndex: Int) {
         
+        retrieveAlarmsFromDatabase()
+        
+        var alarm = existingAlarms[alarmIndex]
+        
+        if alarm.snooze.snoozed {
+            audioController.stopAlarm()
+            alarm.alarmTime = alarm.snooze.originalAlarmTime!
+            alarm.alarmFired = false
+            alarm.alarmIsActivated = false
+            alarm.snooze.snoozed = false
+            
+        } else {
+        
+            audioController.stopAlarm()
+            alarm.alarmIsActivated = false
+            alarm.alarmFired = false
+        }
+        existingAlarms[alarmIndex] = alarm
+        
+        saveAlarmsToDatabase()
     }
     
     func saveAlarmsToDatabase() {
@@ -197,9 +233,10 @@ class SSSAlarmController {
     }
     
     func fireAlarm(alarmIndex: Int) {
-        let alarmInfo: (title: String, time: String)
+        let alarmInfo: (title: String, time: String, index: Int)
         alarmInfo.title = existingAlarms[alarmIndex].alarmTitle
         alarmInfo.time = DateFormatter.stringFromTime(time: existingAlarms[alarmIndex].alarmTime)
+        alarmInfo.index = alarmIndex
         
         if !existingAlarms[alarmIndex].alarmFired {
             //Load audio file and play it
